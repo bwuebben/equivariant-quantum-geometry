@@ -1,0 +1,27 @@
+\subsection{Comparing two realizations of a collection}\label{sec:ordinarymarking}
+
+An equivalence used to compute the integral class of a mirror thimble can depend on choices that break the fan symmetry. Suppose another equivalence carries the very same thimbles to a collection on which the fan group acts as prescribed. Their composite is an autoequivalence of the toric variety. On a Fano variety the description of autoequivalences by Bondal and Orlov puts a strong restriction on the signs that can occur in this comparison.
+
+\begin{proposition}\label{prop:ordinarymarking}
+Let $X$ be a smooth projective complex toric Fano variety and let $G$ be a finite group of fan symmetries. Write $a_g=(f_{g^{-1}})^*$ for its left action. Let $(C_s)_{s\in S}$ be a full exceptional collection with $a_g C_s\simeq C_{gs}$, and let $(b_s)_{s\in S}$ be an integral basis of $K_0(X)$ with $a_g b_s=b_{gs}$. Suppose a complex-linear exact autoequivalence $A$ satisfies
+\[
+                       [A C_s]=\epsilon_s b_s,\qquad \epsilon_s\in\{1,-1\}.
+\]
+Then $a_g(A C_s)\simeq A C_{gs}$ and $\epsilon_s=\epsilon_{gs}$ for every $g$ and $s$. Shifting the objects in each negatively signed orbit by one gives a $G$-permuted full exceptional collection of classes $b_s$ in the original order. Mutually orthogonal objects stay mutually orthogonal in every degree.
+\end{proposition}
+
+\begin{proof}
+Write $K=K_0(X)$, with multiplication induced by derived tensor product. By Bondal--Orlov's theorem an exact autoequivalence is the composite of a shift, tensor product with a line bundle, and pullback by an automorphism of $X$. The shift degree gives a homomorphism to $\Z$ \cite[Theorem~3.1]{BO}.
+
+Consider an autoequivalence $P$ of shift degree zero whose action on some integral basis of $K$ is diagonal with entries $\pm1$. Write $P=(-\otimes L)h^*$. Its action on $K/2K$ is the identity. Evaluation on $[\mathcal O_X]$ shows that $[L]$ is the unit of this quotient ring. It follows that $h^*$ is the identity on $K/2K$ as well.
+
+To recover its integral action, choose a permutation basis of $K$ for the \emph{full} fan group by Proposition~\ref{thm:main}. Every component of $\mathrm{Aut}(X)$ has a representative in the fan group \cite[Theorem~4.5]{Dun}. The identity component acts trivially on $K$, by homotopy invariance of topological $K$-theory and the algebraic comparison of Section~\ref{sec:lattice}. Hence $h^*$ permutes this basis. Distinct vectors of a basis remain distinct after reduction modulo two, so $h^*$ fixes every one of them over $\Z$. Taking determinants of line bundles shows that $h$ acts trivially on $\mathrm{Pic}(X)$. The component group acts faithfully on $\mathrm{Pic}(X)$ \cite[Theorem~4.5]{Dun}, whence $h\in\mathrm{Aut}^0(X)$.
+
+Now $P$ acts on $K$ by multiplication by $[L]$. Its square is the identity on $K$, so taking the determinant of $[L^{\otimes2}]=[\mathcal O_X]$ gives $L^{\otimes2}\simeq\mathcal O_X$. The toric Picard group is torsion-free. Indeed the coordinates indexed by the rays of one smooth maximal cone split the character-lattice injection in the divisor sequence. Thus $L\simeq\mathcal O_X$. We conclude that $P$ acts trivially on $K$ and fixes every exceptional object up to isomorphism, by the connected-automorphism argument above.
+
+Apply this observation to $P_g=a_g^{-1} A a_g A^{-1}$. Its shift degree is zero. Since $A a_g A^{-1}$ sends $A C_s$ to $A C_{gs}$, the action of $P_g$ on $b_s$ is multiplication by $\epsilon_s\epsilon_{gs}$. The observation gives $P_g(A C_s)\simeq A C_s$ and $\epsilon_s\epsilon_{gs}=1$, as desired. The last assertions follow since shifts preserve the generated subcategory and the vanishing of whole morphism complexes.
+\end{proof}
+
+In particular suppose $U$ and $V$ are two equivalences from a mirror category to $D^b\mathrm{Coh}(X)$. If $U$ carries specified thimbles to the permuted objects $C_s$, then the calculation needed from $V$ is its individual unsigned class on each of those thimbles. Taking $A=VU^{-1}$ gives the orbitwise signs and the action on the resulting objects. This use of two equivalences requires no linearization of an object under its stabilizer.
+
+The same argument accommodates a realization $V$ which reverses morphisms. Regard $V$ and $D_X U$ as equivalences from the opposite mirror category, where $D_X=R\mathcal Hom(-,\mathcal O_X)$. Derived duality commutes with inverse pullback. Hence the duals of the $C_s$, taken in reverse order, still form a full exceptional collection permuted by $G$. Applying Proposition~\ref{prop:ordinarymarking} to $V(D_X U)^{-1}$ gives the result in this order. In either application both functors must act on the specified thimbles in a common category.

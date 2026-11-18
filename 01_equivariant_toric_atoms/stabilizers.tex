@@ -1,0 +1,33 @@
+\subsection{Linearizing the stabilizer of an exceptional object}\label{sec:stabilizer}
+
+Suppose a finite group $H$ fixes the isomorphism class of an exceptional object $E$. Isomorphisms $(h^{-1})^*E\simeq E$ compose up to scalars. A choice for which they compose according to the group law is an $H$-linearization. Whether such a choice exists depends on how $H$ acts on the variety. On $\mathbb P^1$, for example, $z\mapsto-z$ and $z\mapsto 1/z$ give commuting involutions preserving $\mathcal O(1)$. A linearization would lift their projective action on sections to commuting linear transformations. The matrices
+\[
+      \begin{pmatrix}-1&0\\0&1\end{pmatrix},\qquad
+      \begin{pmatrix}0&1\\1&0\end{pmatrix}
+\]
+anticommute, and rescaling them cannot change this. The first involution is a translation of the open torus. Fan automorphisms act on that torus by group automorphisms, and in particular fix its identity.
+
+\begin{proposition}\label{prop:stabilizers}
+Let $X$ be a smooth projective complex toric variety. Suppose a finite group $H$ acts through the canonical automorphisms induced by its fan, and $E\in D^b\mathrm{Coh}(X)$ is exceptional. If every $h\in H$ fixes the isomorphism class of $E$, then $E$ admits an $H$-linearization. Its linearizations up to isomorphism form a torsor under $\mathrm{Hom}(H,\C^*)$.
+\end{proposition}
+
+\begin{proof}
+Write $A_h=(h^{-1})^*$. Choose isomorphisms $\theta_h\colon A_hE\to E$. Since $\operatorname{End}(E)=\C$, the composites $\theta_h A_h(\theta_j)$ differ from $\theta_{hj}$ by scalars forming a two-cocycle. Write $\alpha\in H^2(H,\C^*)$ for its class. We detect this class after extending scalars to $L=\C(V)$ for a faithful linear representation $V$ of $H$.
+
+Put $k=L^H$. The extension $L/k$ is Galois with group $H$. Descent of $X_L$ using the given fan action gives a smooth projective toric variety $Y/k$. Its dense torus descends with its identity. Merkurjev--Panin's restriction theorem for a neutral toric model therefore applies to $Y$ \cite[Corollaries~4.4 and~5.8, Proposition~5.6]{MP}. The split toric presentation identifies $K_0(X_L)$ with geometric $K_0$. Since $[E_L]$ is invariant for the descent action, we can choose a virtual class $v\in K_0(Y)$ restricting to $[E_L]$.
+
+For this singleton orbit, a primitive summand $F$ of the finite pushforward of $E_L$ has division endomorphism algebra $D$ and $F_L\simeq E_L^{\oplus d}$ \cite[Proposition~2.14]{BDM}. In fact the pullback of the pushforward is a sum of copies of $E_L$, and every summand of such a sum has this form. Thus $D\otimes_k L=M_d(L)$ and $\dim_kD=d^2$. Computing the Euler pairing after extending scalars gives
+\[
+                        \chi_Y(F,v)=d\,\chi_{X_L}(E_L,E_L)=d.
+\]
+On the other hand, for any perfect complex $P$ on $Y$, the spaces $\operatorname{Ext}^i(F,P)$ are right vector spaces over $D$. Consequently $d^2$ divides $\chi_Y(F,v)$, and $d=1$. The object $F$ now gives descent isomorphisms on $E_L$ satisfying the group law. They differ from the scalar extensions of the $\theta_h$, composed with the scalar action on $L$, by elements of $L^*$. Hence $\alpha$ vanishes in $H^2(H,L^*)$.
+
+It remains to recover the scalar class over $\C$. Unique factorization in the polynomial ring of $V$ gives the exact sequence of $H$-modules
+\[
+  1\longrightarrow\C^*\longrightarrow L^*
+    \xrightarrow{\operatorname{div}}\operatorname{Div}(V)\longrightarrow 0 .
+\]
+The prime divisors are a permutation basis. Each orbit with stabilizer $J$ contributes $H^1(J,\Z)=0$ to the first cohomology of the divisor group by Shapiro's lemma. Cohomology here commutes with direct sums since $H$ is finite. It follows that $H^2(H,\C^*)\to H^2(H,L^*)$ is injective. Thus rescaling the $\theta_h$ gives a linearization of $E$. There is no higher coherence obstruction because $\operatorname{Ext}^{-i}(E,E)=0$ for $i>0$. Two linearizations differ by a scalar character.
+\end{proof}
+
+In a collection permuted by a finite fan group $G$, consider an orbit $O=G/H$ of mutually orthogonal exceptional objects. Choose an $H$-linearization on a representative by Proposition~\ref{prop:stabilizers} and induce it to the sum of the objects of $O$. Its endomorphism algebra is $\C^O$ in degree zero, with $G$ permuting the primitive factors. Derived Hom from this sum identifies the generated subcategory, with its $G$-action, with the category of perfect complexes on the finite $G$-set $O$. An equivariant complex on $O$ is determined by its value at the identity coset and the action of $H$ there. The resulting category of equivariant objects is therefore $D^b(\mathrm{Rep}_{\C} H)$. This identifies the stabilizer multiplier in the classification of transitive blocks \cite[Corollary~3.42]{ESS}. For a subgroup $J\le G$, the same finite set decomposes into $J$-orbits indexed by $J\backslash G/H$, with stabilizers $J\cap gHg^{-1}$.

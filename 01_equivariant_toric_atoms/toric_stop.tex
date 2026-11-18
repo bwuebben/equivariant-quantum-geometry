@@ -1,0 +1,63 @@
+\section{From thimbles to perfect complexes}\label{sec:coherenttransport}
+
+The group acts on a thimble by moving its critical point and preserving its path in the base. On a coherent sheaf it acts by pullback. To compare these actions one must keep track of the regular fibre throughout the passage to the cotangent bundle. There the group acts by diffeomorphisms of a real torus, whose action on sheaves can be read off directly.
+
+Let $M=N^\vee$, let $T_a=M_{\mathbb R}/2\pi M$ be the angle torus, and, for a cone $\sigma\in\Sigma$, let $T_\sigma$ be the annihilator in $T_a$ of $N\cap\operatorname{span}_{\mathbb R}\sigma$. Use an invariant norm on $N_{\mathbb R}$ to write $S^*T_a=T_a\times S(N_{\mathbb R})$. The two conic links that will occur are
+\[
+ \Lambda_\pm^\infty
+    =\bigcup_{0\ne\sigma\in\Sigma}T_\sigma\times
+                       \big((\pm\sigma)\cap S(N_{\mathbb R})\big).
+\]
+The corresponding closed conic sets in $T^*T_a$, with the zero section included, are denoted by $\Lambda_\pm$. A fan automorphism $g$ acts on angles by $h_g=(g^{-1})^\vee$ and on covectors by $g$. Its cotangent lift preserves both links. We use the primitive $\langle p,d\theta\rangle$.
+
+\subsection{Following the marked fibre to the conic link}
+A compact Liouville hypersurface in a contact boundary is sometimes called a ribbon. When we move a ribbon $j:F\hookrightarrow\partial Y$, we record its intrinsic primitive $\mu$ and a positive function $b$ on the boundary such that $j^*(b\alpha)=\mu$, where $\alpha$ is the ambient boundary form. This permits a change of radial section in the completion. It also specifies which core is the stop.
+
+\begin{lemma}\label{lem:equivariantlink}
+In positive dimension the completed pair of Proposition~\ref{prop:compactpair}, at the chosen $G$-fixed Morse parameter, is joined by deformations of compact Liouville pairs and strict identifications of completions to a cotangent disk of $T_a$ whose marked core is $\Lambda_+^\infty$. Each map and family commutes with $G$. The squared logarithmic grading continues to the vertical cotangent grading. One can use the same real background bundle for the relative Pin structures throughout.
+\end{lemma}
+
+\begin{proof}
+The straight cutoff homotopy of Proposition~\ref{prop:compactpair} is a deformation of compact pairs fixed near $F_0$. In particular we may start with the ray polynomial $W=t\sum_{v}z^v$, $t>0$, where $v$ runs over the primitive ray generators. We use the geometric comparison of Fang, Hu, Sun and Zhou \cite{FHSZ}. We give the choices needed for a finite group, since a quadratic form given by declaring a lattice basis orthonormal need not be invariant.
+
+Take $\Phi$ constructed in the proof of \eqref{eq:cycledual}, with homogeneous end $\phi_\infty$. There take the norm to be invariant and average the small smooth approximations. This preserves their $C^2$ bounds, the positive Hessian lower bound, the strict facet inequalities and the agreement with a homogeneous end. In particular the gradient on an entire facet of the polar polytope lies in the interior of the union of maximal cones containing its ray. These are the fixed-potential hypotheses of \cite[Appendix D, condition D.9, and \S T.16]{FHSZ}. Strong convexity and proper quadratic growth make $d\phi_\infty$ a homeomorphism with smooth inverse off zero. Indeed its value $p$ is attained at the unique minimum of $\phi_\infty(u)-\langle p,u\rangle$, and the Hessian at a nonzero minimum is invertible.
+
+Use the normalized family $f_s$ of \cite[\S M.1, M.6--M.7]{FHSZ}. At $s=0$ it is $e^{-\beta}\sum_v z^v=W/R$, with $R=t e^\beta$. At $s=1$ the level $H=f_1^{-1}(1)$ is the tailored hypersurface. The cutoff of each monomial compares its weight with those of all the other exponents, using the same scalar functions for every pair. The height is one at each vertex and zero at the constant. The remaining cutoff depends on $\sum_v |e^{-\beta}z^v|^2$. Thus relabelling the rays preserves the functions $f_s$ themselves, including their phases.
+
+Choose $D_-$ above the fibre truncation threshold of \cite[Q.2]{FHSZ}, then $D\ge\max(D_-+1,D_0)$ with $D_0$ from \cite[U.31]{FHSZ}. Write
+\[
+        A_-=D_-^2\beta^2/2,\qquad A=D^2\beta^2/2,\qquad K=\kappa R^2.
+\]
+First take $\beta$ sufficiently large for these fixed radii, with $R$ beyond the image of the common compact critical-point bound of Proposition~\ref{prop:compactpair}. Take $A_-$ above the $\Phi$-values on that compact set. The reference fibre then has the allowed truncation $L'=A_-$ by the outwardness estimate of \cite[Q.2]{FHSZ}. Choose the exterior horizontal level of Proposition~\ref{prop:compactpair} afterwards, then $\kappa$ large enough for both constructions. Write $m_\delta$ for a smooth maximum agreeing with the larger argument outside a $\delta$-neighbourhood of equality. With $\delta<A-A_-$ sufficiently small the pairs of \cite[Q.15--Q.16, Q.21, Q.23--Q.27 and Q.35]{FHSZ} are
+\begin{align*}
+ Y_s&=\{m_\delta(\Phi-A,e^{2\beta}(|f_s|^2-1))\le0\},\\
+ F_s^-&=\{f_s=1,\ \Phi\le A_-\},\qquad
+ \lambda_s=\lambda_\Phi+K f_s^*\alpha_0,\qquad
+ \lambda_\Phi=-d\Phi\circ J .
+\end{align*}
+The indicated results give smooth fibres of this compact family, an outward ambient field, and the embedded hypersurfaces with primitive $\lambda_\Phi|_{F_s^-}$. All defining functions are invariant. Lifts of $\partial_s$ tangent to the ambient boundary, the hypersurfaces and their frontiers exist in family charts. Their defining tangency and time-component conditions are affine, so a partition of unity and averaging give a single invariant lift. Its flow trivializes the compact pairs, including the boundaries.
+
+At $s=0$ the primitive equals $\lambda_\Phi+\kappa W^*\alpha_0$. The two boundary germs on the entire truncated fibre coincide, since its vertical face is $|W|=R$ in both constructions. The rounding may be taken small enough to include the common compact critical-point bound in the interior of $Y_0$. The exhaustion $\Phi+\kappa |W|^2/4$ increases strictly along the complete ambient field outside that compact set, as in Proposition~\ref{prop:compactpair}. A negative trajectory staying outside $Y_0$ would remain in a compact sublevel on which the rate of increase has a positive minimum. Thus every such trajectory reaches the boundary. The two completions identify strictly with the same torus, with the same marked hypersurface.
+
+It remains to carry the hypersurface to a boundary on which its core has an explicit equation. Set $D_\beta=\{\Phi\le A\}$ and
+\[
+ \Gamma=\bigcup_{0\ne\sigma\in\Sigma}
+ \{(u,\theta):d\phi_\infty(u)\in\sigma\setminus\{0\},\
+                                              \theta\in T_\sigma\}.
+\]
+The fixed-potential core calculation of \cite[\S T.16, T.115--T.116]{FHSZ} identifies the core of $F_1^-$ with $H\cap\Gamma$. The inclusion of $Y_1$ in $D_\beta$ identifies their completions strictly for the primitive $\lambda_\Phi+Kf_1^*\alpha_0$ by \cite[Q.59]{FHSZ}. To transfer the embedded ribbon through this identification and then remove the base area, put $\lambda(k)=\lambda_\Phi+kf_1^*\alpha_0$, $0\le k\le K$. By \cite[U.31, U.34--U.41, U.46--U.54]{FHSZ}, the $\lambda(k)$-Liouville trajectories from a common neighbourhood of $H\cap\Gamma$ in $H$ hit $\partial D_\beta$ transversely. The first-hit maps $\pi_k$ embed that neighbourhood after shrinking and carry the core onto $\Gamma\cap\partial D_\beta$. The times $\tau_k$ and maps commute with $G$ by uniqueness of flow. The neighbourhood may be intersected with its finitely many translates. A scalar cutoff of the field used to extend its flow may be averaged after requiring it to be one on the union of the retained compact trajectory bands.
+
+The negative intrinsic Liouville flow $a_T$ of the fibre takes all of $F_1^-$ into this neighbourhood for a common finite $T$, preserving its core. This follows by compactness from the description of the core as the intersection of the nested negative images. In dimension one the fibre is a finite set and $a_T$ is the identity. On the fixed compact ribbon carrier put $j_k=\pi_k a_T$ and $\mu_T=e^{-T}\lambda_\Phi|_{F_1^-}$. Then
+\[
+                     j_k^*\lambda(k)=e^{\tau_k\circ a_T}\mu_T .
+\]
+Indeed a variable flow time contributes a multiple of the Liouville vector field, on which the primitive vanishes. Extend $-\tau_k\circ a_T$ as a smooth function from the moving embedded ribbon to the boundary family, also along its frontier. Average the extension and exponentiate. This gives the required witness $b_k$ on the whole boundary. At $k=K$ a strict change of section with radial shift $s$ pulls the outgoing boundary form back to $e^{-s}$ times the incoming one. On our ribbon $s=-\tau_K\circ a_T$ by \cite[U.55--U.57, V.1--V.13]{FHSZ}. Thus its transferred witness agrees with $b_K$ on the ribbon. Interpolating their logarithms gives a deformation fixing the embedded ribbon and its intrinsic form. We may now decrease $k$ to zero.
+
+The Legendre map $(u,\theta)\mapsto(\theta,d\Phi(u))$ is strict at $k=0$. The boundary lies on the homogeneous end, so radial normalization $p\mapsto p/\|p\|$ carries its intersection with $\Gamma$ onto the whole link $\Lambda_+^\infty$. The boundary form is divided by $\|p\|$ and the witness is multiplied by this same norm. Invariance of $\Phi$ identifies the group action with the cotangent lift of $h_g$.
+
+Finally consider the grading. The squared logarithmic volume is invariant since each lattice determinant has square one. The forms $d\lambda_\Phi+kf_s^*d\alpha_0$ give a symplectic rectangle on the required carriers by the Poisson bracket estimate of \cite[Lemma~O.5]{FHSZ}. Take compatible complex structures by polar decomposition using the invariant logarithmic Kähler metric. On $k=0$, and also on $s=0$ by holomorphicity, this gives the logarithmic complex structure. Parallel transport the squared volume in $k$ by the projected connection $\nabla_k\sigma=P_k\partial_k\sigma$, where $P_k$ is orthogonal projection to the varying canonical square. It is constant on the holomorphic edge. This gives a grading along the top of the rectangle returning to the logarithmic one at $(1,0)$. For the earlier compact perturbation the same construction uses the straight contraction to $W$, the bracket bound in Section~\ref{sec:compactmirror}, and continuation along the interval of flattened primitives. Strict inclusions agree on their common interior, and the grading extends along invariant radial collars. To identify the terminal class, let $B$ be the invariant inner product on $M_{\mathbb R}$ and $H_\Phi=B^{-1}\operatorname{Hess}\Phi$. In a $B$-orthonormal frame the complex coframes
+\[
+         ((1-l)I+lH_\Phi)\,du+i\,d\theta,\qquad 0\le l\le1 ,
+\]
+are compatible with $d\lambda_\Phi$, as diagonalization of the positive $H_\Phi$ shows. Their invariant squared determinants join the log grading and the pullback of the vertical cotangent grading. The product real bundle with fibre $N_{\mathbb R}$ and diagonal $G$-action extends across all changes of carrier. At the cotangent end fibre translation identifies it equivariantly with the vertical tangent bundle, as required for the polarized relative Pin convention.
+\end{proof}

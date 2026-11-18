@@ -1,0 +1,100 @@
+\section{An exact fibration for the quantum critical points}\label{sec:compactmirror}
+
+The finite algebra of Proposition~\ref{prop:cluster} specifies which critical points contribute to quantum cohomology. A vanishing disk, however, is transported from a critical point all the way to a regular fibre. To construct it we must also choose what happens outside the neighbourhood that defines the algebra.
+
+Consider $W=t(z+z^{-1})$ on $\C^*$, with $t>0$, and add $\epsilon(z^2+z^{-2})$. Writing $s=z+z^{-1}$ gives the perturbed function $ts+\epsilon(s^2-2)$. Its logarithmic derivative is $(z-z^{-1})(t+2\epsilon s)$. For sufficiently small nonzero $\epsilon$ the critical points at $1$ and $-1$ persist. Two further critical points, reciprocal to each other, leave every compact subset as $\epsilon\to0$. A generic far fibre has four points, whereas a far fibre of $W$ has two. We shall keep the holomorphic perturbation near the chosen critical points and the original function on the end. At the expense of holomorphicity in a compact transition region, this gives a symplectic fibration with precisely the prescribed critical points.
+
+\subsection{The ray potential at infinity}
+Assume $n=\dim X\ge1$ throughout this section. Let $T=\operatorname{Hom}(N,\C^*)$, and write its points as $x=\exp(u+i\theta)$ with $u\in N^\vee_{\mathbb R}$ and $\theta\in N^\vee_{\mathbb R}/2\pi N^\vee$. Fix an invariant Euclidean norm. Let $\Phi(u)$ be a smooth $G$-invariant function with uniformly positive definite, bounded Hessian, and equal off a compact set to a positive two-homogeneous function $\phi$. The squared Euclidean norm is one choice here. The adapted potential constructed in Section~\ref{sec:objects} has these properties as well. Write
+\[
+     \lambda=-d\Phi\circ J=\langle d\Phi,d\theta\rangle,\qquad
+     \omega=d\lambda,\qquad g(\cdot,\cdot)=\omega(\cdot,J\cdot).
+\]
+This metric is uniformly equivalent to the complete flat logarithmic metric. On any regular holomorphic fibre its Liouville field is the gradient of the restricted $\Phi$.
+
+For the primitive rays $v_i$ put $W_c=\sum_i c_i x^{v_i}$, allowing $c$ to range over a compact subset of $(\C^*)^{\#\Sigma(1)}$. The following two estimates use the same property of the Fano polytope. Exponential growth of the full gradient controls parallel transport. Growth of the gradient of $\Phi$ along a fibre controls the boundary at which that fibre will be cut.
+
+\begin{lemma}\label{lem:rayest}
+Put $r=\|u\|$ and $A=\max_i |c_i x^{v_i}|$. For $r$ sufficiently large,
+\[
+       \|dW_c\|_g\ge c_0 A,\qquad A\ge c_1 e^{\delta r}
+\]
+for some $c_0,c_1,\delta>0$. For each fixed $R_0$, on the regular part of every fibre over $|w|\le R_0$, there are constants $a>0$, $r_0$ such that
+\[
+                      \|\nabla_{W_c^{-1}(w)}\Phi\|_g\ge a r
+                      \qquad (r>r_0).
+\]
+The constants are uniform over the indicated coefficient set.
+\end{lemma}
+\begin{proof}
+Since the origin is interior to $\Delta=\mathrm{conv}(v_i)$, its support function is positive on the unit sphere, uniformly bounded below by some $\delta>0$. This proves the estimate for $A$. Along any sequence with $r\to\infty$, pass to limits
+\[
+    u/r\longrightarrow e,\qquad c_ix^{v_i}/A\longrightarrow b_i,
+       \qquad B=\sum_i b_i v_i .
+\]
+At least one $|b_i|=1$. A ray strictly below the supporting face at $e$ has $b_i=0$, by the exponential gap and the coefficient bounds. The vertices of this proper face are linearly independent. Hence $B\ne0$. Since $B$ is the limit of the normalized logarithmic differentials, compactness proves the first estimate.
+
+If the second conclusion fails, take such a sequence with fibre gradient $o(r)$. The component of $d\Phi$ normal to the fibre has the form $\operatorname{Re}(\zeta\,dW_c)$; the error has norm $o(r)$. Write $B_r=\sum_i c_ix^{v_i}v_i/A$. The real-logarithmic and angular components of this equation, divided by $r$, give
+\[
+             d\phi_{u/r}=\eta B_r+o(1),\qquad \eta=\zeta A/r
+\]
+as a complex covector; the imaginary part on the right tends to zero. Since $B_r\to B\ne0$, the coefficients $\eta$ stay bounded. But $W_c/A\to0$ over a bounded disk, so $\sum_i b_i=0$ and $\langle B,e\rangle=h_\Delta(e)\sum_i b_i=0$. The limiting equation evaluated on $e$ contradicts $d\phi_e(e)=2\phi(e)>0$.
+\end{proof}
+
+\subsection{Keeping the far fibre fixed}
+Fix $t>0$ as in Proposition~\ref{prop:cluster}, and put $W=t\sum_i x^{v_i}$. Choose nested invariant precompact neighbourhoods of its finite critical set and a smooth invariant cutoff $\chi$ which is one on the smaller neighbourhood and vanishes off the larger. For $y$ in a sufficiently small ball centred at $y^*$ define
+\[
+                    \pi_y=W+\chi\bigl(F_t(\cdot;y)-W\bigr).
+\]
+Shrink the parameter neighbourhood so that its closure is compact. At a symmetric Morse parameter the critical points of $\pi_y$ are exactly the quantum cluster, with their original holomorphic germs and Euler values. Indeed on the compact transition region $\partial W$ has a positive lower bound, and for $y$ small there $\|\bar\partial\pi_y\|<\|\partial\pi_y\|$. The Poisson bracket of the real and imaginary parts is, up to a fixed nonzero factor, the difference of the squares of these norms. Its sign agrees with that of a holomorphic submersion. Thus the fibre tangent space is symplectic, with its symplectic orthogonal mapped to the positively oriented base. Nearer the critical points the assertion follows from Proposition~\ref{prop:cluster}. Farther out the map equals $W$.
+
+Transport over a compact path avoiding critical values is defined on the whole fibre. On the end a unit horizontal lift has norm $O(A^{-1})$ by Lemma~\ref{lem:rayest}. On the remaining compact set above the path the derivative on the horizontal planes stays invertible. A bounded lift cannot escape in finite time in the complete metric. Cartan's formula for the derivative of the transported primitive gives an exact differential on the fibre, since contraction of the symplectic form with a horizontal vector vanishes on vertical vectors. These transports commute with $G$ at a $G$-fixed parameter.
+
+We shall place a compact portion of a large positive fibre in the contact boundary of the total space. By a Liouville pair we mean here a compact Liouville domain together with a Liouville hypersurface in its contact boundary. Its hypersurface records where wrapping stops in the completion \cite[Example~3.11]{GPS}. The inclusion of this hypersurface, as well as its abstract fibre, will matter.
+
+\begin{proposition}\label{prop:compactpair}
+For $R$ sufficiently large, a compact Liouville domain $F_0$ in $F=W^{-1}(R)$ embeds as a common boundary hypersurface in a family of compact Liouville pairs for the maps $\pi_y$. Its completion is $F$. For some $\kappa>0$ the pairs admit a deformation, relative to the restricted primitive on $F_0$, from a truncation of
+\[
+           (T,\lambda+\kappa\pi_y^*\alpha_0),\qquad
+          \alpha_c=\tfrac12\big((\xi-\operatorname{Re}c)d\eta
+                              -(\eta-\operatorname{Im}c)d\xi\big),
+          \quad w=\xi+i\eta ,
+\]
+to a compact fibration with a product horizontal boundary. At the initial end the completion of the truncation is the whole displayed manifold, and the pairs for $\pi_y$ and $W$ are exactly symplectomorphic by an identification fixed near $F_0$. The constructions can be made invariant at a fixed parameter. At a Morse parameter with pairwise distinct critical values, the final fibration, before rounding its corners and after subtracting a form from the base, is a compact exact Lefschetz fibration.
+\end{proposition}
+
+\begin{proof}
+We first make a choice that will allow $\kappa$ to be chosen last. Outside the cutoff support the new primitive is $-d\Psi\circ J$ for $\Psi=\Phi+\kappa|W|^2/4$. All its critical points there lie in a compact set independent of $\kappa\ge0$. Indeed at an escaping sequence of critical points the logarithmic and angular differentials, in the notation of the lemma, give
+\[
+         d\phi_{u/r}=-b\,\overline{(W/A)} B_r,
+                    \qquad b=\kappa A^2/(2r)\ge0.
+\]
+Pass to a limit $S=\lim W/A=\sum b_i$. The scalar multiplying $B_r$ stays bounded since $B\ne0$. If $S=0$, pairing the limiting equation with $e$ gives $2\phi(e)=0$. If $S\ne0$, $b$ has a finite nonnegative subsequential limit and the same pairing gives $2\phi(e)=-\lim b\,h_\Delta(e)|S|^2\le0$. This proves the compact bound without first bounding the coefficient of $|W|^2$.
+
+Enlarge that compact set to contain the cutoff support and choose $R$ above all its image moduli, uniformly for the family. Thus $F$ is a fibre of the original ray potential for every parameter. Cut it at a regular level $L'$ of $\Phi$ above the threshold of Lemma~\ref{lem:rayest}. The resulting $F_0$ has outward fibre Liouville field. That field is the projection of $\nabla\Phi$, of norm $O(1+r)$. Its complete flow identifies $F$ with the completion of $F_0$, since $\Phi$ is proper and increases strictly beyond the level. In complex dimension one $F_0=F$ is a finite set.
+
+For the horizontal boundary we need an exterior trivialization over the whole disk $|w|\le R$, including its critical values. Use radial transport from $R$ in a larger disk centred there, writing $w-R=\rho e^{i\vartheta}$. A lift starting sufficiently far out moves logarithmic distance less than one. Indeed as long as it remains within this distance, its speed over the bounded segment is exponentially small in its initial $r$, by the lemma. Reverse transport gives the same bound. Consequently transport identifies an exterior of $F$ times the disk with a neighbourhood of the entire end over the disk, through the common holomorphic submersion. All finite-order derivatives of the lifted unit vectors are bounded by a polynomial in $r$ times $e^{-\delta r}$. To see this, differentiate the metric dual of $d\operatorname{Re}W$ or $d\operatorname{Im}W$ divided by its squared length. Each derivative of $W$ is $O(A)$, the denominator is bounded below by a constant times $A^2$, and the metric and its inverse have polynomial derivative bounds by homogeneity. Differentiating the radial flow equation gives the same estimates for its displacement from the identity.
+
+In these coordinates the pulled-back primitive has the form
+\[
+                     \lambda_F+dQ+b_0\,d\vartheta .
+\]
+Here $Q$ is its integral along the lifted radius. Subtracting $dQ$ fixes its vertical restriction by exact transport and kills its radial component. The remaining base one-form is smooth in Cartesian coordinates at the origin. On the punctured disk $\partial_\rho b_0>0$: pairing the radial horizontal vector with the angular vector gives the positive horizontal area. Its area density at the origin is positive as well. Let $\gamma$ be an invariant cutoff on the reference fibre, one sufficiently far out and zero on a compact core containing $F_0$ and near the inner boundary of the trivialization. The radial construction of \cite[Lemma~2.2]{Kea}, in the relative form needed here, replaces $\lambda$ by
+\[
+  \lambda_s=\lambda_F+\big((1-s\gamma)b_0+s\gamma\rho^2/2\big)d\vartheta
+                     +d\big((1-s\gamma)Q\big),\qquad 0\le s\le1.
+\]
+This extends by the original primitive on the core. Each $d\lambda_s$ has the same vertical restriction and positive horizontal area. In its top exterior power the radial derivative of the angular coefficient is $(1-s\gamma)\partial_\rho b_0+s\gamma\rho$ and all its fibre derivatives disappear. The base pullback $\kappa\pi_y^*d\alpha_0$ preserves this positivity, also on the regular core by the bracket calculation and at a critical point by $d\pi_y=0$. The primitives on $F$ restrict exactly to $\lambda_F$.
+
+Extend the function $\Phi|_F$ from the exterior product, constantly along the base, to a smooth invariant exhaustion $l$ over the closed disk. For $L$ large truncate by $|\pi_y|\le R$, $l\le L$. This is a common domain because the functions agree off the compact cutoff support, on which the base inequality is strict. Take $L$ above $L'$ and the values of $l$ on the compact set chosen at the start of the proof, and sufficiently large that the horizontal face lies wholly in the product chart with $\gamma=1$. There $\Lambda_s=\lambda_s+\kappa\pi_y^*\alpha_0$ differs from
+\[
+                     \lambda_F+s\alpha_R+\kappa\alpha_0
+\]
+by a one-form $\epsilon_s$ whose norm and first derivatives decay exponentially times a polynomial in $r$. Indeed $Q$ and its derivatives have this bound by the radial integral and the flow estimates. In Cartesian coordinates the remaining base covector is evaluated on transported base vectors, themselves exponentially small, before subtracting $dQ$. Use the fibre metric times the Euclidean base metric for these estimates.
+
+The product Liouville field is the sum of the fibre gradient and the base field $(w-sR/(s+\kappa))/2$. For $\kappa\ge1$ its norm is $O(1+r)$ and the inverse product two-form is uniformly bounded. Subtracting the two Liouville equations bounds the error in the field by a constant times $\|\epsilon_s\|+(1+r)\|d\epsilon_s\|$. Lemma~\ref{lem:rayest} gives $dl(Z_F)\ge a^2r^2$ on the horizontal face. On the exterior vertical face the product field increases $|w|^2$ at rate at least $R^2/2$. Thus increasing $L$ if necessary yields outwardness on the horizontal face, and the exterior vertical estimate holds past a fixed compact set, uniformly in $s$ and $\kappa\ge1$. On the remaining compact portion of $|w|=R$, the horizontal two-form and primitive for $\lambda_s$ have bounded coefficients, uniformly in $s$. Adding $\kappa d\alpha_0$ and $\kappa\alpha_0$ on those planes makes the projected field tend uniformly to $w/2$. Now fix $\kappa$ large. Round the corners using a smooth maximum of the face functions. Both outward derivatives are positive there, and the rounding avoids that compact set and misses $F_0$ over $w=R$. This gives the actual boundary inclusion with its fixed primitive.
+
+At $s=0$ the Liouville field is complete. On the end decompose $\nabla\Phi$ into its vertical part and its orthogonal horizontal part. If $B_0=\|\nabla\operatorname{Re}W\|^2$, the horizontal metric for $\Lambda_0$ is multiplied by $1+\kappa B_0$, and the vertical metric is unchanged. The extra horizontal term in $\nabla\Psi$ for this new metric has norm at most $\kappa|W|\sqrt{B_0}/(2(1+\kappa B_0))$. Since $|W|=O(A)$ and $\sqrt{B_0}\ge c A$ on the end, the full field is $O(1+r)$. Outside the rounded domain, $\Psi$ is proper and increases strictly under this field by the initial compact critical-point bound. Every backward trajectory therefore reaches the boundary in finite time. This identifies the completion with all of $T$. Along the straight small parameter homotopy to $W$ the primitive differences $\kappa(\pi_y^*\alpha_0-W^*\alpha_0)$ have compact support in the interior. Moser transport is exact and fixed near the boundary. At an invariant parameter all choices in the homotopy and the resulting field are invariant.
+
+Finally $s=1$ gives the product primitive near the horizontal face. On the unrounded domain subtract $\pi_y^*(\alpha_R+\kappa\alpha_0)$ from $\Lambda_1$. The resulting primitive is exactly $\lambda_F$ on that collar and retains the symplectic form on each regular fibre. Near a critical point the subtracted base two-form in $d\lambda-\pi_y^*d\alpha_R$ vanishes at the point and is of type $(1,1)$ in the holomorphic Morse chart. The form is therefore Kähler on a smaller chart. These are the compact exact Lefschetz conditions of \cite[Definitions~2.12--2.17]{McL} at a Morse parameter when each critical fibre contains a single critical point. If several critical points share a value the construction retains all their individual Morse germs in the same fibre.
+\end{proof}

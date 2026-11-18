@@ -1,0 +1,96 @@
+\subsection{Products and their symmetries}
+
+Even if the Euler values on $Y$ are distinct, the two labels $(s,t)$ and $(t,s)$ on $Y^2$ have the same value. A symmetry of $Y$ can force further coincidences before one takes the product. We treat both in the same construction. The quantum product formula is due to Behrend and Kaufmann \cite{Beh,Kau}. Cotti, Dubrovin and Guzzetti give the product rule for refined Dubrovin data \cite[Remark~5.4 and Proposition~5.11]{CDG}, and Gyenge studies products of quantum spectra and their formal atoms \cite[\S\S4--5]{Gye}. The action on external exceptional collections is familiar from \cite[Lemmas~3.10--3.11]{BDM}. Here we keep track of the individual objects at a prescribed parameter, including their morphisms when two different sums agree.
+
+\begin{proposition}\label{prop:product}
+Let $X=\prod_j Y_j^{m_j}$, with $Y_j$ smooth projective complex Fano varieties of even cohomology, and let $H_j$ be finite groups acting on the respective factors. Choose $H_j$-fixed semisimple parameters $\tau_j$ on convergent branches with $H_j$-compatible descendant calibrations. On $X$ take the sum of their pullbacks, with the induced continuation. Fix a lifted phase admissible for the distinct sums of Euler values. Suppose that on each $Y_j$ the normalized columns at this phase are represented by a full exceptional collection $(E_s)$ in phase order, with $gE_s\simeq E_{gs}$ for $g\in H_j$ and total orthogonality between distinct objects of equal Euler value.
+
+Then the external products represent the individual normalized columns on $X$. They form a full exceptional collection in phase order, permuted by $\prod_j(H_j^{m_j}\rtimes S_{m_j})$. Any two distinct objects of equal total Euler value are mutually orthogonal in every degree.
+\end{proposition}
+\begin{proof}
+Consider first $A\times B$ at $T=s\boxtimes1+1\boxtimes t$ in flat coordinates. To compute its three-point tensor, use three decomposable insertions and expand the further copies of $T$ in the big product. In a term with $k$ insertions from $A$ and $l$ from $B$, the Gromov--Witten product formula gives a cup product of the two primary classes. Each pulls back from the space of curves retaining the first three markings and the extra markings of its own factor, by the flat-unit axiom. The map
+\[
+  \overline M_{0,3+k+l}\longrightarrow
+  \overline M_{0,3+k}\times\overline M_{0,3+l}
+\]
+is proper and birational. Indeed the first three markings identify two general smooth rational curves uniquely, after which the other markings can be combined. The projection formula gives the product of the two integrals, with coefficient $1/(k!\,l!)$. It follows that the entire algebra at $T$ is the tensor product of the factor algebras. Kaufmann's convergence and base-point theorems give the ambient analytic germ along this split continuation \cite[Theorem~2.2.1 and Proposition~3.3.5]{Kau}. The Euler element at $T$ is $E_A(s)\boxtimes1+1\boxtimes E_B(t)$, by the degree formula of Section~\ref{sec:lattice}. Thus the primitive idempotents tensor and their values add.
+
+We also need the descendant normalization. At $Q=1$ and zero parameter, the tensor of the factor fundamental solutions solves the product $z$-equation, since the grading and classical first Chern class operators add. Its factor $S$ and its conjugate $z^{\mu_{\rm gr}}Sz^{-\mu_{\rm gr}}$ are regular at infinity with value the identity. These two conditions characterize the descendant solution at zero \cite[Proposition~2.3.1 and Remark~2.3.2]{GGI}. Along $T$ the quantum connection in a factor direction acts on that factor alone, by the primary calculation. Uniqueness of flat transport therefore gives
+\[
+                S_{A\times B}(T,z)=S_A(s,z)\otimes S_B(t,z).
+\]
+Equivalently one can begin at large radius with independent Novikov variables. After removing the classical divisor exponential, the normalized small solutions have constant Novikov coefficient the identity. For the difference of two solutions agreeing in lower degrees, the coefficient in degree $d\ne0$ is killed by $z(P\cdot d)I+\operatorname{ad}(P\cup)$, where $P$ is ample. This is invertible because $P\cdot d>0$ and the commutator is nilpotent. The normalized small solutions thus agree before transport in the other split directions. Both arguments use matching divisor logarithms and continuation paths.
+
+The Gamma class and modified Chern character are multiplicative. With the tensor choices of square roots, the calibrated section of each external product is consequently the tensor of its factor columns. The phase is admissible on each factor, as one sees by keeping all other labels fixed. On a common sector of opening greater than $\pi$, removal of the summed exponential leaves in the limit the normalized tensor idempotent. Uniqueness of the asymptotic matrix identifies each column even for a repeated sum. Iteration gives the formula on $X$.
+
+Write $h(u)=-\operatorname{Im}(e^{-i\varphi}u)$, so that $h$ increases in the exceptional order. A nonzero derived Hom between two external products requires a nonzero derived Hom in every coordinate by K\"unneth. In each coordinate the height can only increase or remain fixed. Equal height forces equal value by admissibility, and then nonzero Hom forces identical labels by factor orthogonality. Thus a nonzero Hom between distinct tuples strictly increases total height. This proves both vanishings at an equal sum. Each diagonal endomorphism complex is $\C$ in degree zero.
+
+Exactness in each argument and factor fullness put all exterior products in the generated subcategory, including the negative powers of an exterior very ample bundle. A complex in its right orthogonal has zero hypercohomology after all sufficiently positive twists. Serre vanishing and global generation force every cohomology sheaf to vanish. The exceptional subcategory is admissible and hence full. Finally, inverse pullback and permutation of the arguments give the asserted action on the objects.
+\end{proof}
+
+\subsection{The coherent class of a mirror cycle}
+
+For a smooth projective toric Fano variety $Y$, the geometric comparison with sheaves and the Gamma integral structure assign dual coherent classes to the same cycle. The sign of the divisor class can already be seen on $\mathbb P^1$. Write $W=x+q/x$, with $q>0$, and orient the positive real axis $\Gamma_{\mathbb R}$ from zero to infinity. Use integral angles $m=\arg(x)/(2\pi)$ and cotangent coordinate $p=-\log|x|$. The toric coherent--constructible correspondence sends $\mathcal O(k)$, for $k>0$, to the costandard sheaf on the interval $(0,k)$, projected to the angle circle \cite[\S3.1]{Fang}. Its characteristic cycle has outward conormals at the endpoints. Thus the end $x=0$ attaches at $m=k$, and the oriented interval runs from $k$ to zero. If $A$ is the counterclockwise unit circle, the resulting relative class is $\Gamma_{\mathbb R}-kA$. Taking the constant Laurent coefficient gives
+\[
+ \int_A e^{-x-q/x}\frac{dx}{x}
+      =2\pi i\sum_{d\ge0}\frac{q^d}{(d!)^2}.
+\]
+In the standard Gamma section, $\operatorname{Ch}(\mathcal O(k))=1+2\pi i k[\mathrm{pt}]$. Pairing with the small $J$-function at $z=-1$ therefore adds $k$ times the displayed period to the positive real period \cite[\S5]{GGI}. The costandard cycle subtracts it. Its standard label is $\mathcal O(-k)$.
+
+The same duality holds in every dimension. Take real positive ray coefficients $c_i$ at a regular point in the small chart of \cite[\S3.1]{FZ}, with the real divisor logarithms. Write $\kappa$ for the correspondence taking an ample line bundle $L=\mathcal O(\sum l_iD_i)$ to the costandard dualizing sheaf on the interior of its moment polytope
+\[
+                P=\{m:\langle m,v_i\rangle\ge -l_i\},
+\]
+pushed to the angle torus. Write $C_F$ for the characteristic cycle of $\kappa F$ pulled back by the negative Legendre map $(u,m)\mapsto(m,-d\Phi(u))$ with $u=\log|x|$. Normalize the standard cycle-to-$K$ map $V$ by $V(\Gamma_{\mathbb R})=[\mathcal O_Y]$, where $\Gamma_{\mathbb R}$ is the positive real torus.
+
+\begin{proposition}[Coherent duality for mirror cycles]\label{prop:cycleduality}
+For every perfect complex $F$ on $Y$ the signed characteristic cycle satisfies
+\begin{equation}\label{eq:cycledual}
+                  V([C_F])=[F^\vee],\qquad
+                  F^\vee=R\mathcal Hom(F,\mathcal O_Y).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Turn the coefficients along $c_i(t)=c_i e^{2\pi i t l_i}$ for $0\le t\le1$ and take the outward conormal cycle of $tP$. In a Euclidean metric on the angle cover, the map taking $w$ to its nearest point $m_t\in tP$ and the normal covector $(w-m_t)^\flat$ parametrizes this cycle continuously down to $t=0$. At zero it gives the entire cotangent fibre over the origin, whose inverse image is $\Gamma_{\mathbb R}$. The real orientation induces the sign $(-1)^{\dim Y}$ on the zero-section piece for $t>0$, by the negative Legendre map. This is the multiplicity of the dualizing shift on the open polytope. At $t=1$ projection to the angle torus gives $C_L$.
+
+To check transport at infinity, we choose the Legendre potential. Put $a_i(u)=\langle u,v_i\rangle$, $h=\max_i a_i$, and $Q^\circ=\{h\le1\}$. We want every ray attaining $h(u)$ to belong to the smallest fan cone containing $d\Phi(u)$ at large radius. Begin with the two-homogeneous function
+\[
+ \phi(u)=B(u)^{2/p},\qquad
+ B(u)=\sum_i\max(a_i(u),0)^p+\varepsilon\|u\|^p .
+\]
+Take $p$ large and even, then $\varepsilon>0$ small. On the facet $a_i=1$ of $Q^\circ$, the vector $\sum_j\max(a_j,0)^{p-1}v_j$ lies in the interior of the union of the maximal cones containing $v_i$. Indeed in any contrary sequence with $p\to\infty$ take a convergent subsequence of points and weights. Only the maximizing rays at the limit can have positive limiting weights, and the weight at $v_i$ is one. Those rays span a simplicial fan cone. The limit vector therefore lies in the relative interior of a cone containing $v_i$, disjoint from every maximal cone omitting $v_i$. Compactness now allows the $\varepsilon$ term and a small smooth angular perturbation. The resulting gradient has the required property by homogeneity.
+
+This choice is adapted in the sense used for the small mirror. At an interior test point of a face contained in $k$ facets, $B<k+1/2$ for the choices just made, whereas $B\ge k+1$ on its boundary. Weighted Cauchy--Schwarz in the second derivative gives
+\[
+ D^2\phi(u)[v,v]\ \ge\ 2 B(u)^{2/p-1}\varepsilon\|u\|^{p-2}\|v\|^2
+ \qquad (u\ne0).
+\]
+Thus strict convexity gives an interior minimum on every positive-dimensional proper face. Smoothing on the sphere in $C^2$ preserves the Hessian bound and the strict face inequalities. One may smooth at the origin by convolution inside a ball and interpolate on a fixed annulus, where the convolution is arbitrarily close in $C^2$. The resulting $\Phi$ has a proper invertible gradient and agrees with the chosen homogeneous end at infinity.
+
+Over a face of $tP$ with outward normal cone $-\sigma$ we have $d\Phi(u)\in\sigma$. On the compact set of directions $h=1$ satisfying this cone condition for the homogeneous end, all rays outside $\sigma$ have $a_i\le1-\delta$ for some $\delta>0$. We may use one $\delta$ for the finitely many cones. For $t>0$, every monomial indexed by a ray in $\sigma$ has phase $2\pi(t l_i+\langle m_t,v_i\rangle)=0$. At $t=0$ every monomial is positive. Hence along the sweep at infinity,
+\[
+ \Re W_{c(t)}\ge (\min_i c_i)e^{h(u)}-(\sum_i c_i)e^{(1-\delta)h(u)} .
+\]
+The critical values are uniformly bounded on the coefficient loop. Indeed if logarithmic radii of critical points escaped to infinity, normalize the monomials by their largest modulus and take a subsequence. All nonzero limiting terms lie on one proper face of the Newton polytope, by first taking a limit of $u/\|u\|$. Its rays are linearly independent, contradicting the vanishing logarithmic gradient. A single sufficiently large $w$-ball therefore has boundary in the right half-plane above the critical values throughout the loop. The swept ball gives relative parallel transport from $\Gamma_{\mathbb R}$ to $C_L$.
+
+The divisor relation $q(d)=\prod_i c_i^{D_i\cdot d}$ lifts this loop from $\tau$ to $\tau+2\pi i c_1(L)$. Expressed at the initial logarithm, continuation of the structure-sheaf section around this positive loop inserts $e^{-2\pi i c_1(L)}$ at $z=1$ by the divisor equation \cite[Proposition~2.10(ii)]{Iri}. The real-cycle normalization and integral comparison are those of \cite[\S7.3]{GHIKLS}. This proves \eqref{eq:cycledual} for ample line bundles. Line bundles generate toric $K_0$ as a ring \cite[Theorems~2.2 and 4.1]{San}. If $B$ is very ample, the Koszul complex of $\dim Y+1$ sections without common zero gives $(1-[B])^{\dim Y+1}=0$. The recurrence obtained by multiplying this identity by $[L B^j]$ expresses any line bundle $L$ as an integral combination of sufficiently ample twists. Additivity proves \eqref{eq:cycledual}.
+\end{proof}
+
+Now choose a lifted admissible phase at the small point, with distinct critical values. Fang and Zhou's thimbles $T_i$ form a full exceptional collection in their wrapped category. Use their cotangent primitive $-p\,d\theta$ and their covariant equivalence $\mu$ from constructible sheaves to perfect branes stopped at the toric conic Lagrangian at infinity \cite[Theorem~5.1]{FZ}. Set $F_i=\kappa^{-1}\mu^{-1}(T_i)$. Their geometric comparison gives $[T_i]=[C_{F_i}]$ \cite[Proposition~5.4 and Corollary~5.7]{FZ}. The straight phase rays give the individual asymptotic columns by stationary phase, with a common rotation of the tails to the chosen lift of $\arg z=0$ \cite[proof of Theorem~6.4]{GI}, \cite[\S6.2]{FZ}. Consequently the factor objects in the standard Gamma calibration are the $F_i^\vee$, with shift parities chosen to match the orientations. The original thimbles are ordered by increasing transverse height, while the Gamma order is decreasing \cite[Figure~1 and Lemma~5.5]{FZ}, \cite[Remark~2.6.5]{GGI}. Duality reverses all morphisms, so the dual objects in reverse order form a full exceptional collection. Proposition~\ref{prop:product} now gives the marked collection on $Y^m$ for all factor permutations.
+
+\subsection{Fan symmetries of products}
+
+Connected automorphisms of a smooth projective variety fix every exceptional object up to isomorphism. Indeed they preserve the admissible subcategory it generates \cite[Corollary~3.15]{KaO}. The exceptional objects of that category are its generator and its shifts. Pullback preserves the finite nonempty set of cohomology sheaf degrees, so the shift is zero. The factor collection at a generic small divisor parameter can therefore also be used with internal automorphisms in the identity component. More generally, in any toric dimension the group permuting the divisor rays with a common Picard class is contained in the connected automorphism group \cite[Theorem~4.5]{Dun}. This subgroup therefore fixes each of the dual objects just constructed at a generic small divisor point. This observation concerns isomorphism classes. For canonical fan automorphisms, Proposition~\ref{prop:stabilizers} supplies the stabilizer linearization.
+
+For $Y=\mathbb P^1$ the marked collection also follows directly from the projective-space Gamma theorem \cite[\S5]{GGI}, with change of phase as in \cite[Remark~4.13]{GI}. Take $q>0$ small. The two values of the mirror $x+q/x$ are $\pm2\sqrt q$. Each of the two phase-marked exceptional objects $E_\pm$ is a line bundle up to shift. Indeed coherent sheaves on a smooth curve form a hereditary category. An indecomposable exceptional sheaf on $\mathbb P^1$ is a line bundle by splitting of vector bundles, since the torsion subsheaf splits off and a nonzero torsion sheaf has a self-extension by Serre duality. Torus inversion thus preserves each object as an isomorphism class. The full fan group of $(\mathbb P^1)^m$ consists of signed permutation matrices, since it permutes the ray pairs $\{\pm e_a\}$. It acts on the tuple labels through $S_m$. The value $2(2k-m)\sqrt q$ has $\binom{m}{k}$ labels, all in one orbit, with stabilizer $(C_2)^m\rtimes(S_k\times S_{m-k})$. For $m=2$ the two middle objects are exchanged and are orthogonal in both directions. The corresponding surface decomposition is known \cite[Lemma~3.15]{ESS}; the external line-bundle collections on powers of projective spaces also appear in \cite[Theorem~2.1]{Mir}. Restricting the group can split one of these orbits while leaving all its labels at the same Euler value.
+
+
+To include every fan symmetry, decompose the fan into its indecomposable product factors. We recall why this decomposition is intrinsic. Partition the primitive ray vectors by the equivalence relation generated by lying in a common minimal linear dependence over $\mathbb Q$. The rational spans of the parts form a direct sum, since any dependence among a union of bases would contain a minimal one within a single part. The lattices generated by the respective rays also sum directly to $N$, since one smooth maximal cone supplies an integral basis. Every cone splits into its faces in these summands. Conversely, choose cones in the separate summands, take a relative interior point in each, and place their sum in a cone of the complete fan. The faces of this last cone in the summands contain the chosen points, hence contain the chosen cones as faces. Their product is a face of the original cone. This proves that every such product occurs. No minimal dependence crosses the factors of a fan product, so the factors just constructed are indecomposable. Each is smooth and projective Fano, as one sees by taking a fibre and restricting the anticanonical bundle. Every fan automorphism therefore permutes isomorphic factors and acts on each by a fan isomorphism. This yields exactly the group in Proposition~\ref{prop:product} when isomorphic factors are grouped together and $H_j$ is the full fan group of $Y_j$.
+
+\begin{corollary}\label{cor:surfaceproducts}
+If every indecomposable fan factor of a smooth projective toric Fano variety has dimension at most two, there is a semisimple parameter fixed by the full fan group at which each admissible lifted phase admits a full exceptional collection realizing its marked Gamma basis. The fan group permutes the resulting collection, and distinct objects of equal Euler value are mutually orthogonal in every degree.
+\end{corollary}
+\begin{proof}
+Use the positive small ray for $\mathbb P^1$. On each toric del Pezzo factor Proposition~\ref{thm:main} supplies the fixed semisimple point and Theorem~\ref{thm:surface} below gives the required collection at every admissible phase. Choose the same point on identical factors and apply Proposition~\ref{prop:product}.
+\end{proof}

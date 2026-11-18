@@ -1,0 +1,97 @@
+\section{Critical points in symmetric ray families}\label{sec:example}
+
+\subsection{The centrally symmetric del Pezzo varieties}
+Let $m=2d+1\ge3$. In $\Z^m/\Z(1,\ldots,1)$ write $v_i$ for the image of the $i$th coordinate vector. The fan on the faces of $\mathrm{conv}(\pm v_i)$ defines the centrally symmetric del Pezzo variety of dimension $2d$. Its mirror torus is $\prod_i y_i=1$ and its ray function is $\sum_i(y_i+y_i^{-1})$. The full fan group $S_m\times C_2$ permutes the $y_i$ and inverts them simultaneously. Indeed a ray permutation induced by a lattice map respects the antipodal pairs. The unique relation among the $v_i$ forces a common choice of sign. Conversely every permutation and either common sign preserves the polytope. The small monotone quantum algebra in this family is semisimple by Maydanskiy and Mirabelli \cite{MM}. We calculate the action on its primitive factors.
+
+\begin{proposition}
+Every critical point of this ray function is Morse. It is determined by a set of $k>m/2$ coordinates taking a majority value $r$, with the others equal to $-1/r$, where
+\[
+             r^{2k-m}=(-1)^{m-k}.
+\]
+Its critical value is $(2k-m)(r+r^{-1})$. Its stabilizer is $S_k\times S_{m-k}$ inside the permutation subgroup, with a further factor $C_2$ precisely when $r=\pm1$.
+\end{proposition}
+\begin{proof}
+Logarithmic differentiation subject to $\sum_i d\log y_i=0$ says that $y_i-y_i^{-1}$ is independent of $i$. Its two possible roots are $r$ and $-1/r$. A double root would be $\pm i$, whose $m$th power is different from one. Oddness of $m$ gives the unique majority even if only one root occurs. The product constraint gives the displayed equation. If $a_i=y_i+y_i^{-1}$, elimination of the last logarithmic coordinate gives a Hessian $\mathrm{diag}(a_1,\dots,a_{m-1})+a_m\mathbf1\mathbf1^t$. Its determinant is
+\[
+ \Big(\prod_i a_i\Big)\Big(\sum_i a_i^{-1}\Big)
+       =(-1)^{m-k}(2k-m)(r+r^{-1})^{m-1}\ne0 .
+\]
+A permutation stabilizes the point exactly when it preserves the two coordinate classes. Inversion takes the majority value to its reciprocal, so can occur in a stabilizer exactly under the condition stated.
+\end{proof}
+
+For the degree-six del Pezzo surface there are three orbits, of sizes $1,2,3$ and values $6,-3,-2$. In dimension four there are six orbits of sizes $1,2,2,5,10,10$. The two ten-element orbits already show what is lost by reporting cardinalities alone. At value $3$ the stabilizer is $S_4$ and central inversion fixes no point in the orbit. At value $2$ the stabilizer is $(S_3\times S_2)\times C_2$ and inversion fixes all ten. Full fan-stable exceptional collections on these varieties are known \cite[\S4D]{BDM}. Identifying a chosen collection with a particular Gamma basis also requires its phase and the labeling of its members.
+
+\subsection{The fourfold of Ostrover and Tyomkin}
+The previous examples begin at a semisimple symmetric ray function. On Batyrev's fourfold $U_8$ the monotone quantum algebra already has nilpotents \cite[Proposition~B and \S5]{OT}. A single invariant ray parameter exhibits how the idempotents emerge. Write $q=x_4$. Assign weight $B\in\C^*$ to $x_2,1/x_2,q/x_2,x_2/q$, and weight one to the other six terms of the potential of \cite[\S5]{OT}. On the double cover
+\[
+ q=s^2,\qquad x_1=sa,\qquad x_3=d/s,\qquad x_2=sb
+\]
+the function becomes
+\[
+ W_B=s(a+a^{-1})+s^{-1}(d+d^{-1})
+         +B(s+s^{-1})(b+b^{-1})+s^2+s^{-2}.
+\]
+The deck transformation negates all four variables. Write $I_a,I_d,J$ for inversion of $a,d,b$ individually, and $T(s,a,d,b)=(s^{-1},d,a,b)$. These maps descend and generate a group of order sixteen, as $T$ switches $I_a$ and $I_d$. They give the full fan group. Here is also an intrinsic upper bound: among the ten rays the four with no opposite are the exponents of $sa,s/a,d/s,1/(sd)$. The other six span a rank-two sublattice. A pair from the first four has sum in that sublattice exactly when it has sum $q$ or $q^{-1}$ in monomial notation (that is, exponent $\pm v_q$). Hence a ray symmetry preserves the partition into these two pairs, with at most eight possible actions on their members. Fixing them fixes $v_q$; in the plane spanned by the antipodal rays the remaining four rays are $\pm v_{x_2},\pm(v_{x_2}-v_q)$. Since both $v_{x_2}$ and $v_{x_2}-v_q$ must map to rays, fixing $v_q$ leaves just two choices for the image of $v_{x_2}$, namely $v_{x_2}$ and $v_q-v_{x_2}$. Indeed the other candidates $-v_{x_2}$ and $v_{x_2}-v_q$ have differences by $v_q$ outside the ray set. This gives the upper bound sixteen.
+
+At a critical point $a^2=d^2=1$. Each point downstairs has one representative with $a=1$. Put $d=e$. The two eliminated gradient equations are smooth in their respective variables. The remaining ones give two complete lists
+\begin{align}
+ b=\delta=\pm1,\quad & s^4+(1+B\delta)s^3-(e+B\delta)s-1=0, \label{eq:regular}\\
+ s=\pm i,\quad & b+b^{-1}=-(1+e)/B . \label{eq:exceptional}
+\end{align}
+Indeed the $b$-equation is $(s+s^{-1})(b-b^{-1})=0$. Substituting either possibility in the $s$-equation gives the formulas. This calculation takes place on the entire torus.
+
+\begin{proposition}
+At $B=1$ there are fifteen Morse points and three $A_3$ points. The multiplication operator $[W_1]$ on the Jacobian algebra is diagonalizable. For all $B\ne1$ sufficiently close to one there are 24 Morse points, in 13 orbits of the full fan group.
+\end{proposition}
+\begin{proof}
+In the sign order $(e,\delta)=(+,+),(+,-),(-,+),(-,-)$ the four polynomials of \eqref{eq:regular} specialize to
+\[
+ (s-1)(s+1)^3,\quad (s^2-1)(s^2+1),\quad s^4+2s^3-1,\quad s^4+2s-1 .
+\]
+The last two have simple roots by differentiation. This gives fourteen distinct triples. At $e=1$ both exceptional points in \eqref{eq:exceptional} have $b=-1$ and were already counted. At $e=-1$ it gives four additional triples. A simple ordinary root is Morse away from $s^2=-1$, where $b=\delta$ can be eliminated. On \eqref{eq:exceptional}, if $b^2\ne1$ one eliminates $s$ first, and the remaining $b$-equation is simple.
+
+At $e=b=1,s=-1$ the reduced function after eliminating the transverse variables has
+\[
+             W_1+6=(s+s^{-1}+2)^2=(s+1)^4/s^2 .
+\]
+The local algebra is $\C[h]/(h^3)$ with $h=s+1$. In particular $W_1$ acts there by the scalar $-6$. Tonkonog had observed the $A_3$ singularity \cite[\S4.1]{Ton}. At $e=1,b=-1,s=\pm i$, take $z=s+s^{-1}$ as a coordinate and set $y=b+b^{-1}$. Then
+\[
+ W_1+2=\big(z+(2+y)/2\big)^2-(b+1)^4/(4b^2).
+\]
+Each germ again has type $A_3$ and $W_1=-2$ in its local algebra. Thus the sum of the local lengths is $15+3\cdot3=24$ and multiplication by $[W_1]$ is scalar on each local factor.
+
+The conditions that the four polynomials in \eqref{eq:regular} be squarefree and coprime to $s^2+1$, and that \eqref{eq:exceptional} have distinct roots with $b^2\ne1$, are open on the parameter line. At $B=11/10$ the four polynomials, up to nonzero factors, are
+\[
+\begin{gathered}
+ (s^2-1)(10s^2+21s+10),\qquad (s^2-1)(10s^2-s+10),\\
+ 10s^4+21s^3-s-10,\qquad 10s^4-s^3+21s-10 .
+\end{gathered}
+\]
+Direct Euclidean division gives the stated coprimalities, and \eqref{eq:exceptional} has $b+b^{-1}=-20/11$ or $0$. Therefore all these conditions hold on a punctured disk about one. The two lists now give sixteen and eight Morse points.
+
+On normalized triples $(s,e,b)$ the subgroup $K=\langle I_a,I_d\rangle$ fixes each point, $J$ inverts $b$, and $T$ sends $(s,e,b)$ to $(e/s,e,eb)$. These actions give the following complete table. For instance $JT$ fixes the exceptional triples with $e=-1$ since $s^2=b^2=-1$ there.
+\begin{center}\small
+\begin{tabular}{@{}lrrl@{}}\toprule
+Triples & Orbits & Orbit size & Stabilizer\\\midrule
+$e=1,\ b=\pm1,\ s=\pm1$ &4&1&$G$\\
+$e=1,\ b=\pm1,\ s\ne\pm1$ &2&2&$\langle K,J\rangle$\\
+$e=-1,\ b=\pm1$ &4&2&$\langle K,J\rangle$\\
+$e=-1,\ s=\pm i,\ b=\pm i$ &2&2&$\langle K,JT\rangle$\\
+$e=1,\ s=\pm i$ &1&4&$K$\\\bottomrule
+\end{tabular}
+\end{center}
+\end{proof}
+
+For this fourfold the defining ray function has a critical algebra of length 24 for every nonzero $B$. Indeed its proper faces have linearly independent vertices, so it is nondegenerate at infinity for nonzero coefficients, and its normalized Newton volume equals the 24 maximal unimodular cones \cite[Lemma~2.8 and proof of Theorem~2.14]{RS}. Thus the surjection in Lemma~\ref{lem:quot} is an isomorphism on this slice near large radius after multiplying $W_B$ by a small positive $t$. The table gives the integral basis action in Proposition~\ref{thm:main} at the resulting fixed semisimple parameters.
+
+There is a distinction here between a local parameter and the Euler element. At the point of value $-6$, multiplication by $W_1+6$ vanishes on all of $A=\C[h]/(h^3)$. Thus the ordinary eigenspace there has dimension three. In the proof of \cite[Corollary~6.21]{Rit}, the eigenspace is identified with the socle $\C h^2$. The conclusion about the length-zero open--closed map for the toric fibre with this critical local system still follows. The length-zero closed--open map evaluates a Jacobian class at the point \cite[Lemma~4.1]{Ton}. By the module identity \cite[\S2.6 and Appendix~A.4]{She}, every other local idempotent and the maximal ideal $(h)$ annihilate the open--closed image. Its image therefore lies in $\mathrm{Ann}_A(h)=\C h^2$. It is nonzero by \cite[Lemma~6.8(1)]{Rit}, hence equals this line and misses the local unit.
+
+\subsection{Two quadratic fields in a form of the fourfold}
+Let $L/k$ be a biquadratic extension with Galois group $H=\langle j,t\rangle$. Use $j\mapsto J$ and $t\mapsto T$ as descent data for the split fourfold. These fan automorphisms fix the identity of its dense torus, so the descended variety $Y$ is the neutral model. The subgroup $\langle J,T\rangle$ maps isomorphically to $G/K$. Restriction of the stabilizers in the table gives four fixed points, six pairs fixed by $j$, two pairs fixed by $jt$, and one free orbit. By Corollary~\ref{cor:forms}, in the category of $K_0$-correspondences,
+\[
+       Y\simeq k^4\times (L^{\langle j\rangle})^6
+                       \times (L^{\langle jt\rangle})^2\times L .
+\]
+For instance, take $L=\mathbb Q(\sqrt{2},\sqrt{3})$, with $j$ negating $\sqrt{2}$ and $t$ negating $\sqrt{3}$. The field occurring six times is $\mathbb Q(\sqrt{3})$ and the one occurring twice is $\mathbb Q(\sqrt{6})$. Counting only the sizes of orbits would lose this distinction. The ranks of $K_0$ after base change to $L^{\langle j\rangle},L^{\langle t\rangle},L^{\langle jt\rangle}$ are respectively $20,14,16$, the numbers of orbits for the three subgroups.
+
+One can check these multiplicities on line bundles. The split fourfold is entry~(115) of Prabhu--Naik's table \cite[Appendix~A]{PN}. Its full exceptional collection of Frobenius summands is stable under fan automorphisms \cite[\S4C, p.~233]{BDM}. To compute the divisor classes, order the rays as $e_1,e_2,e_3,e_4,-e_2,-e_4,-e_3-e_4,-e_1+e_4,-e_2+e_4,e_2-e_4$. For $m\in\{0,1,2,3\}^4$ take coefficients $c_r=\lfloor\langle m,r\rangle/4\rfloor$ as in \cite[\S4.1]{PN}. This yields 24 distinct classes. After each ray permutation subtract the principal divisor whose first four entries are those of the permuted vector. The numbers of fixed classes are then $16,4,8$ for $j,t,jt$, with four fixed by all of $H$. These counts recover every stabilizer multiplicity above. The two computations identify the same abstract $H$-set up to isomorphism. Pairing individual line bundles with the Gamma classes of specified idempotents would require a marking of the collection.

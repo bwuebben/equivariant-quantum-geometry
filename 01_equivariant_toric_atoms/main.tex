@@ -1,0 +1,189 @@
+\pdfoutput=1
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage{tikz}
+\usepackage[margin=1.2in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdfauthor={Bernd Johannes Wuebben},pdftitle={Fan symmetries and exceptional collections on toric Fano varieties}}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{question}[theorem]{Question}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Spec}{Spec}
+\title[Fan symmetries and exceptional collections]{Fan symmetries and exceptional collections \\on toric Fano varieties}
+\author{Bernd Johannes Wuebben}
+\date{November 17, 2026\\This version: November 18, 2026}
+\subjclass[2020]{14M25, 14F08, 53D45, 19E08}
+\keywords{Toric Fano variety, quantum cohomology, Gamma class, exceptional collection, permutation lattice}
+\begin{document}
+\begin{abstract}
+Every smooth projective complex toric Fano variety has a full exceptional collection permuted by the automorphism group of its fan. We construct a semisimple point of big quantum cohomology fixed by this group. At each admissible lifted phase the objects can be chosen so that their individual classes give the integral Gamma asymptotic basis indexed by the primitive idempotents at that point. Distinct objects with the same Euler eigenvalue are orthogonal in every degree. One mirror equivalence identifies the fan action on Lefschetz thimbles with toric pullback on perfect complexes. Testing a second equivalence on mirror disks associated with ample polytopes determines the integral classes of its thimble images. Comparing the equivalences recovers the fan action on these images. The objects have rational models on the split variety, and their Galois orbits give division-algebra components on every form in characteristic zero. Over the locus in the nonarchimedean fixed quantum base where the number of distinct Euler eigenvalues is maximal, the reduced Euler cover is the quotient of the primitive-idempotent cover by the fan group. Its connected components give the local equivariant Hodge atoms.
+\end{abstract}
+\maketitle
+\enlargethispage{2pt}
+\begin{center}\small Equivariant Quantum Geometry, Paper 01\end{center}
+
+\section{Introduction}
+Consider inversion on the dense torus of $\mathbb P^1$. It exchanges the two torus-fixed points of the compactification. Yet it fixes both generators $[\mathcal O]$ and $[\mathcal O(1)]$ of $K_0(\mathbb P^1)$. The two critical points of the mirror function $x+x^{-1}$ give the correct action: both $1$ and $-1$ are fixed. This example suggests looking for an integral basis indexed by critical points of a mirror which retains the symmetry of the original variety.
+
+Let $\Sigma$ be a complete smooth fan in a lattice $N$, let $X=X_\Sigma$ be projective and Fano, and let $G$ be a finite group preserving the fan. We use inverse pullback for the left action on cohomology, bundles and complexes. Write $H=H^{\mathrm{even}}(X;\C)$ and $\mu=\dim H$. A semisimple quantum product on $H$ exhibits it as a product of $\mu$ copies of $\C$. The units in the individual factors are its primitive idempotents. At a parameter fixed by $G$ these form a finite $G$-set.
+
+The question of Merkurjev and Panin asks whether the geometric $K$-group of an arithmetic toric variety is a permutation Galois lattice. Castravet and Tevelev asked for a categorical realization by exceptional objects. A full exceptional collection is an ordered sequence generating $D^b\mathrm{Coh}(X)$, with $\mathrm{RHom}(E_j,E_i)=0$ for $j>i$ and $\mathrm{RHom}(E_i,E_i)=\C$ in degree zero. To recover a permutation on the integral group, it suffices that automorphisms permute its members up to isomorphism. Erman, Hanlon, Liu and Zheng constructed such a collection of line bundles in the Cox category of a projective toric variety \cite{EHLZ}. We work in the ordinary derived category of the Fano variety itself.
+
+\begin{theorem}\label{thm:maincombined}
+There is a $G$-fixed semisimple parameter $\tau$ in convergent big quantum cohomology on the large-radius branch of $X$. Write $S$ for its primitive idempotents and $u_s$ for the eigenvalue of quantum multiplication by the Euler field on the factor $s$. At each admissible lifted phase $\varphi$ there is a full exceptional collection $(E_s)_{s\in S}$ in $D^b\mathrm{Coh}(X)$ such that
+\[
+      (f_{g^{-1}})^*E_s\simeq E_{gs},\qquad
+      \mathrm{RHom}(E_s,E_{s'})=0\quad(s\ne s',\ u_s=u_{s'}).
+\]
+Its order is that of decreasing $\operatorname{Im}(e^{-i\varphi}u_s)$, with arbitrary order among tied values. With compatible signs of the normalized idempotents, the Gamma-framed sections of the $[E_s]$ are the individual normalized asymptotic columns. In particular $s\mapsto[E_s]$ induces an isomorphism $\Z[S]\simeq K_0(X)$ of integral $G$-modules.
+\end{theorem}
+
+Here $f_g$ denotes the toric automorphism of $X$. A phase is admissible if distinct Euler values have distinct projected imaginary parts; lifting the angle specifies the branch for the asymptotic solutions. Equal Euler values occur naturally: all primitive factors in one $G$-orbit have the same eigenvalue. Distinguishing their objects is part of the assertion. The basis assertion alone holds at every fixed semisimple point on this branch at which the descendant framing is defined compatibly with $G$ (Section~\ref{sec:lattice}). The categorical construction selects a particular fixed point.
+
+The proof has three parts. First we construct an invariant Morse deformation of the toric Laurent polynomial and identify its persistent critical scheme with the analytic big quantum algebra. The point must lie on the fixed locus; semisimplicity elsewhere would allow all symmetries to be broken. Gui, Qin, Shen and Xiong proved a permutation theorem for ungraded rational cohomology of all smooth projective toric varieties \cite[Theorem~1.2]{GQSX}. Their invariant Morse argument motivates the local construction here. The analytic identification uses the mirror theorem of Coates, Corti, Iritani and Tseng \cite{CCIT}. Once the fixed point has been found, the integral structure of Galkin and Iritani gives the asymptotic lattice \cite{GI}.
+
+Fang and Zhou construct a full exceptional collection from thimbles of a small toric mirror with distinct critical values \cite[Proposition~5.4]{FZ}. At a parameter fixed by a group acting trivially on the value plane, distinct critical values force every critical point to be fixed. To realize a nontrivial permutation we must allow several Morse points over one value. A large Laurent perturbation at infinity can change the reference fibre even on $\mathbb P^1$. Section~\ref{sec:compactmirror} keeps that fibre fixed and separates coincident critical values while retaining the same geometric thimbles. Ordering two tied disks either way proves both morphism vanishings. A Weinstein handle presentation identifies these disks as generators. For the passage to a cotangent bundle we use the geometric comparison of Fang, Hu, Sun and Zhou \cite{FHSZ}, building on the hypersurface skeleta of Gammage--Shende and Zhou \cite{GS,Zhou}. We choose an invariant convex potential and follow the entire marked fibre in that comparison. This identifies its core with the fan conic link while transporting the group action and the gradings of the individual disks. At this endpoint a fan symmetry acts by a diffeomorphism of the angle torus; the coherent--constructible correspondence identifies this action with toric pullback (Section~\ref{sec:coherenttransport}).
+
+Finally, the integral comparison must associate each asymptotic column with the class of an individual object. We use a second equivalence to compute the classes of its own thimble images. At a regular small Laurent polynomial, the preferred thimbles have the periods of the individual Gamma columns. To compare the categories, we test on explicit disks associated with ample polytopes. These span integral $K$-theory, and their stalk Euler characteristics and orientations determine the coherent dual and the sign in the comparison. Continuing back to the symmetric point changes one labelled column at each simple crossing. The description of autoequivalences of a Fano variety then allows us to recover the permutation of the objects after this ordinary comparison (Proposition~\ref{prop:ordinarymarking} and Theorem~\ref{thm:markedcollection}).
+
+The direct route to the categorical theorem runs from the fixed-point and integral results in Sections~\ref{sec:exist}--\ref{sec:lattice} to the thimble construction in Sections~\ref{sec:compactmirror}--\ref{sec:raycalibration}. It uses three comparisons developed alongside the product examples: coherent duality for a mirror cycle (Proposition~\ref{prop:cycleduality}), the comparison of two equivalences (Proposition~\ref{prop:ordinarymarking}), and phase mutation (Proposition~\ref{prop:blocktransport}).
+
+The distinction between a single eigenvalue and a local equivariant Hodge atom is already visible on the projective line. A square root of its divisor parameter separates the two eigenvalues, but their cover of the multiplicative parameter space is connected. Theorem~\ref{thm:atomcover} describes the corresponding monodromy for an arbitrary finite fan action. In the centrally symmetric del Pezzo family the entire cover splits; in dimension four even the two isomorphic two-element orbits give distinct atoms. Section~\ref{sec:fieldmodels} treats a different field of definition, deducing a decomposition by division algebras on every characteristic-zero form from the geometric representatives of Theorem~\ref{thm:markedcollection}.
+
+For surfaces there is also a direct construction by exceptional sheaves. The degree-five del Pezzo surface illustrates its relation to existing categorical decompositions. Its five conic pencils form one orbit for the full automorphism group $S_5$. Along the small positive anticanonical ray five primitive factors have the same Euler value. Castravet and Tevelev already related this multiplicity to their five line bundles on $\overline M_{0,5}$ \cite[Introduction]{CT}. Proposition~\ref{prop:quintic} identifies the labels with the pencils and compares the resulting subcategories, up to equivariant block mutation, to the surface atoms of Elagin, Schneider and Shinder. In lower degrees a fixed semisimple parameter need not exist. For invariant Picard rank one, Proposition~\ref{prop:cutoff} deduces from the Weyl symmetry of the del Pezzo correlators that a nilpotent ideal persists throughout the low-degree fixed germ.
+
+\section{Finding a semisimple point in the fixed locus}\label{sec:exist}
+Write $T=\mathrm{Hom}(N,\C^*)$ for the mirror torus and $x^k$ for its character indexed by $k\in N$. We seek an invariant Laurent function on $T$ with Morse critical points. There is a finite choice of allowable monomials which works before the central function has even been specified.
+
+\begin{lemma}\label{lem:morse}
+There is a finite $G$-stable monomial space $P\subset\C[N]$ such that for every invariant Laurent polynomial $f$, a dense Zariski open subset of $P^G$ consists of $v$ for which every critical point of $f+v$ is Morse.
+\end{lemma}
+\begin{proof}
+Choose lattice coordinates and let $P$ contain the translates of all ordinary polynomials of degree at most $3|G|-1$. For an orbit $\{p_1,\dots,p_r\}$ this space surjects onto the sum of the second jet spaces. Indeed, for each $i$ choose affine functions $\ell_{ij}$ vanishing at $p_j$ and equal to one at $p_i$. The product $L_i=\prod_{j\ne i}\ell_{ij}^3$ vanishes to third order at the other points. At $p_i$ multiply it by the quadratic Taylor polynomial of the prescribed jet divided by $L_i$. The resulting degree is at most $3(r-1)+2$. Summing these polynomials interpolates the orbit. Taking invariants now shows that every stabilizer-invariant jet at a single point is realized by $P^G$.
+
+For a subgroup $H_0\subset G$, the locus with stabilizer exactly $H_0$ is open in the fixed subgroup $T^{H_0}$. Its components have dimension $d=\dim(T_pT)^{H_0}$. This counts all translates of the identity component. Logarithms centred at $p$ identify the tangent representation with the complexification of a real lattice representation. Averaging a positive definite real quadratic form and complexifying gives an invariant nonsingular symmetric form. In invariant jet space, vanishing of the differential imposes $d$ conditions. Under these conditions the determinant of the Hessian is a nonzero polynomial in the remaining coefficients, imposing one further condition for degeneracy. The incidence of bad jets over the stratum therefore has dimension at most $\dim P^G-1$. The closures of its parameter images, for the finitely many stabilizers, form a proper closed subset. Away from it the critical scheme is reduced and zero-dimensional, hence finite.
+\end{proof}
+
+We explain how the lemma applies to the quantum product. Let $v_i$ be the primitive rays. For $k\in N$, express $k=\sum_i\Psi_i(k)v_i$ in the smallest cone containing it, with $\Psi_i(k)\ge0$ and zero coefficients off the cone. The coefficients are integral by smoothness. Set $h(k)=\sum_i\Psi_i(k)$ and $d(k,l)=\Psi(k)+\Psi(l)-\Psi(k+l)$. The latter vector lies in the effective cone and in the curve lattice, of anticanonical degree $h(k)+h(l)-h(k+l)$ \cite[(2.5), Lemma~2.7]{CCIT}. Specialize the Novikov monomials by $Q_t^d=t^{c_1(X)\cdot d}$ with $t>0$ small. This specialization converges at large radius: ampleness gives $c_1(X)\cdot d\ge c\|d\|$ on the closed effective cone for some $c>0$. The coefficients of a convergent Novikov series in lattice coordinates have exponential bounds by the Cauchy inequalities. For $t$ small, $t^{c_1(X)\cdot d}$ dominates this growth, and the number of lattice points of bounded norm grows at most polynomially.
+
+Choose a finite invariant set $A$ of lattice points containing the rays, zero, a lattice basis and its negatives, all the monomials of Lemma~\ref{lem:morse}, and indices whose classical toric monomial classes form a basis of $H$. The latter exist by the classical limit used in \cite[proof of Corollary~7.3]{CCIT}. With $y^*$ equal to one on the rays and zero elsewhere, consider
+\[
+             F_t(x;y)=\sum_{k\in A} y_k t^{h(k)}x^k.
+\]
+At $y^*$ this is $t$ times the usual ray potential. Higher monomials can create additional critical points far out on the torus. It suffices for semisimplicity to know which way the algebra comparison goes.
+
+\begin{lemma}\label{lem:quot}
+For $t>0$ sufficiently small and $y$ near $y^*$, there is a surjective unital homomorphism
+\[
+ \Jac(F_t(\cdot;y))\longrightarrow (H,\star_{\sigma(Q_t,y),Q_t})
+\]
+which is equivariant over the action on parameter space. Here $\Jac$ denotes the ordinary Laurent polynomial ring modulo the logarithmic derivatives, and $\sigma$ is the normalized analytic mirror map.
+\end{lemma}
+\begin{proof}
+In the finite toric extension of \cite[Theorems~4.28, 5.13, 7.2]{CCIT}, set the equivariant parameters to zero. Denote the derivatives of the mirror map by $a_k=\partial\sigma/\partial y_k$. The unital algebra comparison sends $w_k$ to $a_k$. Monomial multiplication and the logarithmic derivative relations read
+\[
+ a_0=1,\qquad a_k\star a_l=Q^{d(k,l)}a_{k+l},\qquad
+ \sum_{k\in A}\langle m,k\rangle y_ka_k=0\quad(m\in N^\vee).
+\]
+To use these identities analytically, express every index in $A$ as a sum of signed basis vectors. Enlarge the finite extension by the partial sums of these expressions and their $G$-translates. Derivatives with these auxiliary indices are evaluated with their parameters set to zero. Compatibility with finite extensions is proved in \cite[proof of Theorem~5.13]{CCIT}. There are now only finitely many identities to specialize. Mirror-map convergence and convergence of the big product give a common analytic neighbourhood for them. The extended variables do not enlarge the support of $F_t$ after restriction.
+
+For clarity, the fan action is natural for this particular mirror map. In the localization formula \cite[Definition~4.15, (4.11)]{CCIT}, relabel all rays, monomial indices and curve degrees by $g$. The balancing equation and the effective exponents are preserved by $\Psi(gk)=g\Psi(k)$. The divisor factors, exponentials in the logarithms of ray parameters and coefficient products are relabelled term by term. On the twisted de Rham module use the action carrying $w_k\omega$ to $w_{gk}\omega$, where $\omega$ is the ordered logarithmic volume form. It is geometric transport multiplied by the inverse determinant character. On the unital algebra the action is the ordinary one on monomials. The normalized negative factor in the Birkhoff factorization of this localization map is unique. Relabelling preserves its normalization at $z=\infty$, and a positive change of source frame leaves it unchanged. The quantum fundamental solution is natural by transport of the stable-map spaces. The coefficient of $z^0$ in $zM(\sigma,z)1=z1+\sigma+O(z^{-1})$ thus gives $\sigma(gQ,gy)=g\sigma(Q,y)$. Here $(gQ)^d=Q^{g^{-1}d}$ on points. In particular $Q_t$ is fixed.
+
+Put $b_k=t^{-h(k)}a_k$. The multiplication identities along the chosen paths become $b_k b_l=b_{k+l}$ and $b_{e_i}b_{-e_i}=1$. Hence $x^{e_i}\mapsto b_{e_i}$ defines a homomorphism from $\C[N]$ carrying $x^k$ to $b_k$ for $k\in A$. The chosen basis derivatives specialize at $(Q,y)=(0,y^*)$ to the chosen classical basis. Their determinant remains nonzero after shrinking. Thus the map is surjective. The last displayed relation annihilates each logarithmic derivative of $F_t$, so the map factors through its Jacobian algebra. The relabelling identity for $\sigma$ gives the equivariance on differentiating.
+\end{proof}
+
+At fixed $t>0$ multiplication of the $k$th parameter by $t^{h(k)}$ is an invertible change of coordinates respecting $G$. Lemma~\ref{lem:morse} now gives invariant parameters arbitrarily close to $y^*$ where the source in Lemma~\ref{lem:quot} is a product of fields. Every quotient of a finite product of copies of $\C$ has this same form. The target, of rank $\mu$, therefore has $\mu$ primitive idempotents. In the convention $Q=1$ the primary divisor equation places this product at
+\[
+                   \tau=\sigma(Q_t,y)+(\log t)c_1(X).
+\]
+Take the real logarithm. This is a fixed parameter in the branch issuing from large radius. The descendant framing in these divisor coordinates is the one in \cite[\S2.3, Proposition~2.4]{Iri}. This proves the existence assertion of Proposition~\ref{thm:main}. In dimension zero the assertion follows directly for a point.
+
+\input{cluster}
+
+\section{The integral asymptotic basis}\label{sec:lattice}
+
+\begin{proposition}\label{thm:main}
+On the calibrated large-radius branch there is a semisimple point fixed by $G$. At every such fixed point with a $G$-compatible descendant framing, its normalized Gamma asymptotic columns, with suitable signs, induce an integral $G$-module isomorphism $\Z[S]\simeq K_0(X)$ for each admissible lifted phase.
+\end{proposition}
+Consider a fixed semisimple parameter $\tau$ as above. Write $e_s$ for its primitive idempotents, and $u_s$ for the eigenvalue of the Euler element on $e_s$. If $\tau_j$ has cohomological degree $2j$, this element is $E=c_1(X)+\sum_j(1-j)\tau_j$. The pairing is Frobenius, so $(e_s,e_t)=0$ for $s\ne t$ and $h_s=(e_s,e_s)\ne0$. An automorphism permutes the idempotents themselves. As $h_s$ is constant on each orbit, choosing a square root once on each orbit gives normalized columns $\Psi_s=e_s/\sqrt{h_s}$ permuted without signs.
+
+Choose a real lift $\varphi$ of an admissible direction, parallel to none of the nonzero differences $u_s-u_t$. Put $U=\mathrm{diag}(u_s)$. The asymptotic fundamental matrix $Y$ of the quantum connection satisfies $Y(z)e^{U/z}\to\Psi$ on a sector $|\arg z-\varphi|<\pi/2+\epsilon$ for some $\epsilon>0$. Existence and uniqueness hold at coalesced values by \cite[Proposition~2.5.1]{GGI}. If $P_g$ is the permutation matrix of the action on $S$, then $P_gU=UP_g$ and $g\Psi=\Psi P_g$. The matrix $gY P_g^{-1}$ is flat and has the same normalized limit. Uniqueness yields $gY=Y P_g$. This argument fixes the whole leading matrix even when two exponential factors coincide.
+
+To pull this conclusion back to $K$-theory, let $S(\tau,z)$ denote the usual descendant fundamental solution. With $\mu_{\rm gr}$ the grading operator and $\rho=c_1(X)\cup{}$, the integral framing is
+\[
+ \mathfrak{s}_\tau(v)=(2\pi)^{-\dim(X)/2}S(\tau,z)z^{-\mu_{\rm gr}}z^\rho
+ \widehat\Gamma_X(2\pi i)^{\deg/2}\mathrm{ch}(v).
+\]
+Transport by an automorphism preserves the virtual classes, cotangent lines and evaluation maps, with curve classes relabelled. Hence $g S(\tau,z)=S(g\tau,z)g$ in the descendant calibration. Each of the remaining factors is natural under pullback. Algebraic $K_0(X)$ maps isomorphically to the torsion-free topological $K$-group by \cite[Theorems~2.2, 4.1 and Remark~3.2]{San}. The Chern character is injective on this lattice after passage to complex cohomology, and the Gamma class has constant term one. In particular $\mathfrak{s}_\tau$ is injective.
+
+Continue the columns and the calibrated sections on the universal cover of $\C^*$ to the same lift of $\arg z=0$, as in \cite[\S4.3]{GI}. By the integral toric Gamma theorem \cite[Theorem~6.4]{GI}, the columns of $Y$ are the images of an integral basis $b_s$. The choices of signs above change these basis vectors by the same signs. For each $g$ we obtain
+\[
+ \mathfrak{s}_\tau(g b_s)=g\mathfrak{s}_\tau(b_s)=Y_{gs}
+                         =\mathfrak{s}_\tau(b_{gs}).
+\]
+Injectivity proves the basis assertion of Proposition~\ref{thm:main}. The argument takes place at the divisor-shifted $Q=1$ parameter, so the calibration agrees with that of the integral theorem.
+
+\section{Forms over arbitrary fields}\label{sec:forms}
+Let $k^s$ be a separable closure of a field $k$. Merkurjev and Panin ask whether the action of $\mathrm{Gal}(k^s/k)$ on the geometric $K$-group of a smooth projective toric variety admits a permutation basis \cite[question following Corollary~7.8]{MP}. For a smooth projective toric variety, Erman, Hanlon, Liu and Zheng construct an invariant full strong exceptional collection of line bundles in its Cox category. The admissible inclusion of $D^b\mathrm{Coh}(X)$ in that category exhibits $K_0(X)$ as a direct summand of a permutation module \cite[Theorem~A and Corollary~B]{EHLZ}. In the Fano case the Gamma basis of Proposition~\ref{thm:main} gives permutation generators for the summand itself.
+
+\begin{corollary}\label{cor:forms}
+For every $k$-form $Y$ of a smooth projective split toric Fano variety, $K_0(Y_{k^s})$ is a permutation Galois lattice. For the neutral model, split by a finite Galois extension $L/k$ with group $H$, any permutation basis $S$ of the split lattice gives the finite étale algebra $\prod_{s\in H\backslash S}L^{H_s}$ as its isomorphism class in the category of $K_0$-correspondences of Merkurjev and Panin. Here $s$ ranges over representatives of the orbits.
+\end{corollary}
+\begin{proof}
+For the split fan $\Sigma$ over any field, let $x_\rho$ stand for $[\mathcal O(-D_\rho)]$ for an invariant divisor. Its $K$-ring is the integral Laurent polynomial ring in the $x_\rho$ modulo
+\[
+ \prod_{\rho\in A}(1-x_\rho)=0,\qquad
+ \prod_\rho x_\rho^{\langle m,v_\rho\rangle}=1 ,
+\]
+where $A$ runs through sets of rays lying in no single cone and $m$ runs through $N^\vee$. This is the multiplicative fan presentation and its augmentation quotient in \cite[Theorem~6.4, \S6.3, Corollary~6.10]{VV}. Completeness gives the required limits for a generic one-parameter subgroup. Base extension preserves every generator, a torus translation fixes each invariant divisor, and the fan group permutes the generators with their ray labels.
+
+Write $T_X$ for the dense torus of the split variety and $W_\Sigma$ for the fan automorphism group. By \cite[Lemma~4.2, Theorem~5.1]{Dun}, every form has a representative in $H^1(k,T_X\rtimes W_\Sigma)$. Here the split variety is smooth and proper, its automorphism group is smooth and its class group is torsion-free. The descent action therefore has the form $t_\gamma w_\gamma\gamma_0$, where $\gamma_0$ acts on coefficients. On the integral fan presentation only $w_\gamma$ acts, and the projection to the constant finite group $W_\Sigma$ is a homomorphism. Take the permutation basis for $W_\Sigma$ over $\C$ from Proposition~\ref{thm:main}. The same elements of the integral presentation give a basis over $k^s$, permuted by the image of this homomorphism. This argument applies also when the characteristic divides its order. For the neutral model the correspondence assertion is \cite[Proposition~4.5]{MP}, as formulated for any permutation basis in \cite[Proposition~6.1]{Xie}. An equivariant function on a transitive orbit with values in $L$ is determined by a value in the stabilizer field.
+\end{proof}
+
+A nontrivial open-orbit torsor introduces another descent problem. Xie explains where the proof of \cite[Proposition~7.9]{MP} uses a representative by a line bundle. A permutation basis consisting of line bundles suffices for the construction of the separable algebra for such a form \cite[Theorem~6.5]{Xie}. The virtual classes in Proposition~\ref{thm:main} establish the geometric lattice assertion for all forms. For instance a conic without real points becomes a projective line over $\C$, on which conjugation fixes the hyperplane class. Every divisor on the real conic has even degree. Taking determinants then shows that its geometric class $[\mathcal O(1)]$ cannot belong to the image of restriction from the real $K$-group. Thus a fixed basis element may already carry an obstruction to individual descent.
+
+\input{u8}
+
+\section{Realization by exceptional objects}\label{sec:objects}
+For the semisimple product of Proposition~\ref{thm:main} the primitive idempotents determine a finite $G$-set, with an invariant function $s\mapsto u_s$. For a categorical decomposition it matters whether the coincidences among the $u_s$ can be read on actual objects. In a semisimple Frobenius manifold the canonical coordinates $u_s$ have linearly independent differentials, also at a point where some values agree \cite[\S2.5]{GGI}. Locally $G$ permutes these coordinates: it preserves the Euler field and sends each idempotent to the correspondingly labelled idempotent. Thus the fixed germ has one independent coordinate per orbit. At a generic point of this germ two values agree precisely on the same orbit.
+
+Theorem~\ref{thm:maincombined} realizes this basis by a collection at a constructed point. We first treat products and surfaces directly, and prove two facts about any realization: how the classes compare under a change of equivalence, and how the collection changes with the phase.
+
+At small toric mirror parameters with distinct critical values, Fang and Zhou construct a full exceptional collection from Lefschetz thimbles \cite[Proposition~5.4]{FZ}. We specify the coherent duality that converts their geometric cycles to our Gamma convention in \eqref{eq:cycledual} below. A group fixing such a parameter must fix every individual critical point if it acts trivially on the target of the potential. Thus a nontrivial permutation of the idempotents leads directly to the coalescent case. Proposition~\ref{prop:cluster} identifies the relevant critical values in the analytic deformation. At a repeated value the individual thimbles can move under the group even though their common path in the base is fixed.
+
+Once a permuted collection exists, the orbitwise vanishing itself has a simple explanation \cite[Lemma~2.12]{BDM}. Number the collection in exceptional order and write $i(s)$ for the position of $E_s$. If there is a nonzero morphism of some degree from $E_s$ to a different $E_t$, then $i(gs)<i(gt)$ for every $g$, by semiorthogonality. The average of $i(gs)$ over $g$ is therefore strictly smaller than the average of $i(gt)$. These averages agree within an orbit. For a general fan action, identifying the class of each geometric object is a separate step. Proposition~\ref{prop:ordinarymarking} isolates the comparison of equivalences needed for this purpose.
+
+\input{products}
+
+\input{marking}
+\input{phase}
+\input{stabilizers}
+
+\input{surfaces}
+
+\input{compact_mirror}
+\input{common_thimbles}
+\input{thimble_figure}
+\input{thimble_morphisms}
+\input{thimble_generation}
+
+\input{toric_stop}
+\input{coherent_transport}
+\input{marked_paths}
+\input{relative_classes}
+\input{polytope_cycles}
+\input{probe_marking}
+
+\input{hodge_atoms}
+
+\input{field_models}
+
+\input{references}
+\end{document}

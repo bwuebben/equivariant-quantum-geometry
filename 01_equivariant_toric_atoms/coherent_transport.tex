@@ -1,0 +1,61 @@
+\subsection{Transport with the group action}
+
+We next explain how to use such a family to follow an individual brane. The point requiring care is that Moser transport of the ambient manifolds may move the intrinsic core inside a hypersurface. A neighbourhood of the whole hypersurface in the contact boundary permits a comparison even in this case.
+
+\begin{lemma}\label{lem:geometrictransport}
+Suppose a finite group acts fibrewise on a smooth compact interval family of Liouville pairs with boundary forms $\alpha_t$, embedded hypersurfaces $j_t:F_t\hookrightarrow\partial Y_t$, and invariant positive functions $b_t$ satisfying $j_t^*(b_t\alpha_t)=\mu_t$ for the intrinsic Liouville primitives $\mu_t$. Give the family a compatible grading and a background bundle with the specified group identifications. There is an equivalence of the categories stopped at the two endpoint cores whose induced bijection on isomorphism classes of geometric branes commutes with each element of the group. It extends to an equivalence of their perfect envelopes.
+\end{lemma}
+
+\begin{proof}
+Trivialize the compact carriers by an averaged interval lift, and attach invariant cylindrical ends. On the fixed completion with forms $\lambda_t$ solve
+\[
+                   \iota_{V_t}d\lambda_t=-\dot\lambda_t .
+\]
+On the cylindrical end $\lambda_t=e^\ell\alpha_t$. The defining equation is homogeneous, so both components of $V_t$ in boundary and logarithmic radial coordinates are bounded. Its flow exists over the interval and commutes with the group. Evaluation against $\partial_\ell$ gives $\lambda_t(V_t)=0$ on the end, so Cartan's formula makes the primitive difference compactly supported and exact. We now have one contact boundary carrying the moving ribbons and their transported witnesses.
+
+At a ribbon the Reeb vector of $b_t\alpha_t$ is transverse since the restriction of its differential to the hypersurface is symplectic. A short Reeb thickening $A_t$ therefore has coordinates $|z|\le\delta$, $x\in F_t$, with form $dz+\mu_t$. A short extension at the frontier and compactness allow one width on a small interval. This construction is invariant. The contact vector field $z\partial_z+Z_{\mu_t}$ points out at the faces. Its negative flow shrinks the thickening to sets whose intersection is the core of $F_t$ at $z=0$. The contact field extends over a collar by extending and averaging its contact Hamiltonian. The stop-forgetting functor from the thickening to the core is a quasi-equivalence \cite[\S3.2, Lemmas~3.5--3.6, Corollary~3.9]{GPS}. Indeed every finite inward shrink induces an equivalence, and morphisms at the intersection are the filtered direct limit of the wrapped Floer cohomology groups along stop-forgetting. The asymptotic boundary of each geometric brane disjoint from the core is compact and misses a finite shrink, giving essential surjectivity. This argument includes a zero-dimensional $F_t$.
+
+For two nearby times write $A,A'$ for the thickenings. Extend an invariant inward contact field for $A$ across its frontier. Strict inwardness persists on the nearby frontier of $A'$; one may use the same small rounding of the product corners before making this choice. Fix a small positive flow time $\epsilon$. For $A'$ sufficiently close to $A$, the inward flow $\psi$ satisfies
+\[
+     \psi^{3\epsilon}(A')\ \subset\ \psi^{2\epsilon}(A)\
+            \subset\ \psi^\epsilon(A')\ \subset\ A .
+\]
+The inclusions follow from the positive collar margins at $A'=A$ and compactness. Forget stops from right to left. The first two arrows composed and the last two composed are inward-shrink equivalences. The two-out-of-six property for equivalences gives equivalences for each arrow. The shrink from $A'$ to $\psi^\epsilon(A')$ completes the comparison. A finite subdivision of the parameter interval suffices by compactness.
+
+Each forgetful functor carries an allowed geometric brane to the very same decorated brane in the target. Hence on geometric isomorphism classes its bijection and the inverse bijection commute with the individual symmetries. The ambient identifications act on geometric branes by transport. The paths of differentials lift to the grading cover from their given initial lifts, equivariantly by uniqueness. The specified identifications of the real background bundle transport the relative Pin structures. Thus these conclusions hold for decorated objects. The construction only uses the action of each geometric symmetry on isomorphism classes in the ordinary category, which can be computed by pushing the Floer data forward and comparing choices. Passing to twisted complexes and summands gives the last assertion.
+\end{proof}
+
+\subsection{Covariance at the cotangent endpoint}
+Let $f_g:X\to X$ denote the toric automorphism with lattice map $g$. On the cotangent side $H_g$ denotes the lift of $h_g$. There is a covariant equivalence
+\begin{equation}\label{eq:coherentendpoint}
+  \mathcal E:\mathrm{Perf}\,\mathcal W(T^*T_a,\Lambda_+^\infty)
+                          \longrightarrow \mathrm{Perf}(X)
+\end{equation}
+with $\mathcal E((H_g)_*L)\simeq(f_{g^{-1}})^*\mathcal E(L)$ for each brane $L$. Here is the direction of each functor. Cotangent inversion $I:(\theta,p)\mapsto(-\theta,-p)$ preserves the primitive and takes the positive link to the negative link. It commutes with the $H_g$, including on the vertical polarization. The latter fixes the graded lift: in an invariant frame the group preserves the constant phase lift of the vertical plane. Equivalently two genuine lifts of this finite group differing by deck translations on the connected ambient Grassmann bundle differ by a homomorphism to $\mathbb Z$, hence coincide.
+
+Write $\mathcal S=\mathrm{Sh}_{\Lambda_-}(T_a)^c$ for the compact objects of the unbounded category of complex sheaves with the indicated microsupport. The link is closed, subanalytic and isotropic, since the finite conormal pieces lie over the annihilator subtori. Microlocal Morse theory gives an equivalence
+\[
+ P:\big(\mathrm{Perf}\,\mathcal W(T^*T_a,\Lambda_-^\infty)\big)^{\mathrm{op}}
+                       \longrightarrow \mathcal S .
+\]
+For an analytic diffeomorphism of the base, the symplectic action here corresponds to the left adjoint of restriction on sheaves \cite[Theorem~1.1 and Proposition~1.3]{GPSmicro}. Thus it acts by $(h_g)_!$. We use complex coefficients in the strata and localization construction of that equivalence, as in \cite[Theorem~5.1]{FZ}. In the normalization of \eqref{eq:cycledual}, the coherent--constructible correspondence $\kappa:\mathrm{Perf}(X)\to\mathcal S$ takes toric pullback by a fan isomorphism $f$ to pushforward by the dual torus map $f_N^\vee$ \cite[\S9, (9.14), Remark~9.3 and Proposition~9.4]{Kuw}. For $f=f_{g^{-1}}$ this dual map is exactly $h_g$. We identify the two presentations of the angle torus by $\theta\mapsto\theta/(2\pi)$, scaling covectors inversely. Finally derived duality $D_X=\mathrm{R}\mathcal Hom_X(-,\mathcal O_X)$ is involutive on perfect complexes and commutes with pullback by an isomorphism. The composite
+\[
+                      D_X\circ(\kappa^{-1}P)^{\mathrm{op}}\circ I_*
+\]
+has the covariance and the action asserted in \eqref{eq:coherentendpoint}.
+
+\begin{theorem}\label{thm:coherentcollection}
+Let $X$ be a smooth projective complex toric Fano variety and let $G$ preserve its fan. There is a $G$-fixed semisimple parameter as in Proposition~\ref{thm:main} and a full exceptional collection of perfect complexes $(E_s)$ on $X$ indexed by its primitive idempotents such that
+\[
+                 (f_{g^{-1}})^* E_s\simeq E_{gs}.
+\]
+The collection may be ordered by the common paths of the distinct Euler values, in increasing terminal-angle order. The subcategory for a value $u$ of multiplicity $m$ is equivalent to $\mathrm{Perf}(\C)^m$. Its individual objects $E_s$ with $u_s=u$ can be taken in any order. The same collection works for all subgroups of the chosen group.
+\end{theorem}
+
+\begin{proof}
+For a point take its structure sheaf. Otherwise apply Section~\ref{sec:compactmirror} to the invariant Morse parameter constructed in Section~\ref{sec:exist}. Proposition~\ref{prop:cluster} identifies the critical points of the retained cluster with the individual idempotents and their values with the Euler coordinates. Choose one path for each distinct value as in Lemma~\ref{lem:samedisks}. Give the resulting thimbles the brane data of Proposition~\ref{prop:diskhoms} using the product background of Lemma~\ref{lem:equivariantlink}. The invariant local changes used to make the disks cylindrical are deformations with the same far ribbon. Apply Lemma~\ref{lem:geometrictransport} along them in reverse, then along the deformation of Proposition~\ref{prop:compactpair} and that of Lemma~\ref{lem:equivariantlink}. Strict identifications at their junctions carry each brane by the graded map itself. At the endpoint use \eqref{eq:coherentendpoint}. The images of the actual disks now satisfy the displayed pullback formula.
+
+The composite is an exact equivalence after passing to perfect envelopes. Theorem~\ref{thm:diskgeneration} gives fullness, and Proposition~\ref{prop:diskhoms} gives exceptionality, the backward vanishings and both vanishings at a tied value. Since $X$ is smooth, $\mathrm{Perf}(X)=D^b\mathrm{Coh}(X)$. The mutually orthogonal exceptional objects over $u$ generate the claimed product category, with admissible inclusion by the evaluation projections for exceptional objects on a proper variety. Restricting the pullback identity gives the assertion for subgroups.
+\end{proof}
+
+One may choose $G=\mathrm{Aut}(N,\Sigma)$ at the outset. A torus translation fixes each exceptional isomorphism class by rigidity (Section~\ref{sec:fieldmodels}). Thus finite groups normalizing the dense torus act on this collection through their fan projection. This gives the collection asked for in the geometric Merkurjev--Panin question in the smooth projective Fano case, in the ordinary derived category \cite[Introduction]{EHLZ}. The theorem specifies perfect complexes. Identifying their individual classes with a prescribed calibrated Gamma basis involves a further comparison: equivariance alone permits a change of integral basis. This is the purpose of Proposition~\ref{prop:ordinarymarking}. Proposition~\ref{prop:stabilizers} supplies linearizations on the individual fan stabilizers.
