@@ -6,6 +6,6 @@ Bernd Johannes Wuebben · [ORCID](https://orcid.org/0009-0002-4588-3284)
 
 ### Fan symmetries and exceptional collections on toric Fano varieties
 
-[Manuscript and source](01_equivariant_toric_atoms/) · [PDF](01_equivariant_toric_atoms/main.pdf) · [Abstract and citation](https://bwuebben.github.io/papers/fan-symmetries-exceptional-collections/) · [Zenodo:24341632](https://zenodo.org/records/24341632)
+[Manuscript and source](01_equivariant_toric_atoms/) · [PDF](01_equivariant_toric_atoms/main.pdf) · [Abstract and citation](https://bwuebben.github.io/papers/fan-symmetries-exceptional-collections/) · [Zenodo:24341631](https://doi.org/10.5281/zenodo.24341631)
 
 Copyright © 2026 Bernd Johannes Wuebben. All rights reserved.
